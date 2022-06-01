@@ -1,0 +1,35 @@
+body{
+    color: #000F;
+    font-family: "Roboto", sans-serif;
+    background-image: url(./Assets/imgs/hills-purple.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+}
+
+#helloWorld{
+    font-size: 8rem;
+    font-weight: 200;
+}
+
+#helloConsoleBtn{
+    width: 30%;
+    height: 20vmax;
+    font-size: 3rem;
+    font-weight: 600;
+    background-color: blueviolet;
+    border: 1px solid #0000;
+    border-radius: 1rem;
+    opacity: 0.7;
+}
+
+#helloConsoleBtn:hover{
+    opacity: 1;
+}
+
+#helloConsoleBtn:active{
+    transition-duration: 30ms;
+    font-size: 4rem;
+    background-color: #9a3bf2;
+}
