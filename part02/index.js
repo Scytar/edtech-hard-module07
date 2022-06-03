@@ -24,11 +24,14 @@ function checkGreaterThan(a,b) {
     if (a > b) {      
         message = "A é MAIOR que B!"        
     }
-    if (a ===  b) {
+    if (a === b) {
         message = "A é IGUAL a B!"    
     }
     if (a < b) {
         message = "A é MENOR que B!"        
+    }
+    if ((a === null) || (b === null)) {
+        message = "DIGITE VALORES VÁLIDOS"
     }
     document.getElementById("result").innerText = message;
 }
