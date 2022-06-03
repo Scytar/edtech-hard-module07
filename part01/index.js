@@ -3,9 +3,10 @@ function consoleHello() {
 }
 
 function eventListenerHello() {
-    return console.log('Hello Console! (Event Listener)');
+     console.log('Hello Console! (Event Listener)');
+     return null
 }
 
 const helloButton = document.getElementById('helloConsoleBtn');
 
-helloButton.addEventListener("click", eventListenerHello, false)
+helloButton.addEventListener("click", eventListenerHello);

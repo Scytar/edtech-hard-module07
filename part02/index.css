@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: ease-in-out 100ms;
+}
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(./assets/imgs/blackboard-math.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: "Roboto";
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #faebd7A0;
+    width: 100%;
+    min-height: 100vh;
+    gap: 2rem;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 0;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+input{
+    background-color: #FFFB;
+    border: 1px solid #0000;
+    border-radius: 0.5rem;
+    width: 8rem;
+    font-size: 2rem;
+    overflow: hidden;
+    text-align: end;
+}
+
+input:focus{
+    background-color: #FFFF;
+}
+
+button{
+    color: #FFFF;
+    background-color: darkgreen;
+    border: 0px solid;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-family: "Roboto";
+    font-weight: 800;
+    font-size: 2rem;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+button:hover{
+    opacity: 1;
+    background-color: green;
+}
+
+button:focus{
+    opacity: 1;
+}
+
+button:active{
+    opacity: 1;
+    color: #000F;
+    background-color: #FFFF;
+}
+
+#result{
+    padding: 0 6rem;
+    height: 6rem;
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 800;
+    background-color: antiquewhite;
+    border: 0 solid #0000;
+    border-radius: 2rem;
+    opacity: 0.5;
+}
