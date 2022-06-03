@@ -1,31 +1,36 @@
-let A = null;
-let B = null;
+let variableA = null
+let variableB = null
 
-function setA() {
-    A = document.getElementById("numberA").value;
-    console.log(document.getElementById("numberA").value);
-    return null
+
+
+function updateVariableForCalc(e, variable){
+    if (variable === "A"){
+        variableA = Number(e.target.value)
+    }
+    if (variable === "B") {
+        variableB = Number(e.target.value)
+    } 
 }
 
-function setB() {
-    B = document.getElementById("numberB").value;
-    console.log(document.getElementById("numberB").value);
-    return null
+document.getElementById('numberA').addEventListener('change', (e) => {updateVariableForCalc(e, "A")});
+document.getElementById('numberB').addEventListener('change', (e) => {updateVariableForCalc(e, "B")});
+document.getElementById('submitButton').addEventListener('click', () => {checkGreaterThan(variableA,variableB)});
+
+
+function checkGreaterThan(a,b) {
+    console.log(a, b)
+    let message = null
+    document.getElementById("result").style.opacity = 1;   
+    if (a > b) {      
+        message = "A é MAIOR que B!"        
+    }
+    if (a ===  b) {
+        message = "A é IGUAL a B!"    
+    }
+    if (a < b) {
+        message = "A é MENOR que B!"        
+    }
+    document.getElementById("result").innerText = message;
 }
 
-function checkGreaterThan(A, B) {
-    document.getElementById("result").opacity = 1;
-    console.log(A,B)
-    if (A > B) {
-        document.getElementById("result").innerText = "A é MAIOR que B!";
-        return null
-    }
-    if (A === B) {
-        document.getElementById("result").innerText = "A é IGUAL a B!";
-        return null
-    }
-    if (A < B) {
-        document.getElementById("result").innerText = "A é MENOR que B!";
-        return null
-    }
-}
+console.log(document.getElementById("numberA").value)
