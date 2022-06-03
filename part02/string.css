@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: ease-in-out 100ms;
+}
+
+
+body{
+    font-family: "Roboto";
+    color: #FFFF;
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(./assets/imgs/academia-brasileira-letras.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#backgroundFade{
+    background-color: #0005;
+    width: 100%;
+    min-height: 100vh;
+}
+
+textarea{
+    width: 40%;
+    overflow-x: hidden;
+    font-family: "Roboto";
+    resize: none;
+}
