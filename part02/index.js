@@ -1,8 +1,7 @@
 let variableA = null
 let variableB = null
 
-
-
+// Updates the values for A and B
 function updateVariableForCalc(e, variable){
     if (variable === "A"){
         variableA = Number(e.target.value)
@@ -12,11 +11,12 @@ function updateVariableForCalc(e, variable){
     } 
 }
 
+// Event listeners on inputs and check button
 document.getElementById('numberA').addEventListener('change', (e) => {updateVariableForCalc(e, "A")});
 document.getElementById('numberB').addEventListener('change', (e) => {updateVariableForCalc(e, "B")});
 document.getElementById('submitButton').addEventListener('click', () => {checkGreaterThan(variableA,variableB)});
 
-
+// Checks for the relation between A and B
 function checkGreaterThan(a,b) {
     console.log(a, b)
     let message = null
@@ -32,5 +32,5 @@ function checkGreaterThan(a,b) {
     }
     document.getElementById("result").innerText = message;
 }
-
-console.log(document.getElementById("numberA").value)
+// Debugging
+// console.log(document.getElementById("numberA").value)
