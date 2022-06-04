@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
 
+            <!-- CSS Links -->
         <link rel="stylesheet" href="./assets/styles/style-base-classes.css">
         <link rel="stylesheet" href="./string.css">
 
@@ -17,10 +18,14 @@
         <div id="backgroundFade"  class="column justify-center align-center gap-48 width-100">
             <h1>Qual texto é maior?</h1>
 
-            <div>
-                <textarea name="" id="text1" cols="30" rows="10" placeholder="Cole/digite aqui o primeiro texto"></textarea>
-                <textarea name="" id="text2" cols="30" rows="10" placeholder="Cole/digite aqui o segundo texto"></textarea>
+            <div id="textAreaDiv" class="row justify-center align-center gap-48">
+                <textarea name="" id="textA" cols="30" rows="10" placeholder="Cole/digite aqui o primeiro texto"></textarea>
+                <textarea name="" id="textB" cols="30" rows="10" placeholder="Cole/digite aqui o segundo texto"></textarea>
             </div>
+
+            <button id="checkButton">VERIFICAR!</button>
+
+            <h2 id="result"></h2>
         </div>
 
         <script src="./string.js"></script>

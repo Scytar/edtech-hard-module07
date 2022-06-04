@@ -15,6 +15,12 @@ body{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    text-align: center;
+}
+
+h1{
+    font-size: 4rem;
+    text-shadow: 4px 4px 0 #000F, -4px 4px 0 #000F, 4px -4px 0 #000F, -4px -4px 0 #000F;
 }
 
 #backgroundFade{
@@ -24,8 +30,55 @@ body{
 }
 
 textarea{
-    width: 40%;
+    width: 40vw;
     overflow-x: hidden;
     font-family: "Roboto";
     resize: none;
+    padding: 0.5rem 1rem;
+    border: 1px solid #0000;
+    border-radius: 0.5rem;
+}
+
+#checkButton{
+    color: #FFFF;
+    background-color: darkgreen;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    border: 1px solid #0000;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+#checkButton:hover{
+    opacity: 1;
+}
+
+#checkButton:active{
+    opacity: 1;
+    background-color: #FFFF;
+    color: #000F;
+    border: 1px solid #000F;
+}
+
+#result{
+    color: #000F;
+    background-color: antiquewhite;
+    padding: 0.5rem;
+    font-size: 2rem;
+    border-radius: 0.5rem;
+    opacity: 0;
+}
+
+@media (max-width: 600px) {
+    
+    #textAreaDiv{
+        display: flex;
+        flex-direction: column;
+    }
+
+    textarea{
+        width: 80vw;
+    }
 }
