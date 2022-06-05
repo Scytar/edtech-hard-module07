@@ -52,12 +52,12 @@ document.querySelector("#deathButton").addEventListener("click", (e) => {
 
     let message = "Enjoy your " + result + " days remaining. Make good use of them!"
 
-    if (bDay+bMonth+bYear === 0) {
-        message = "Are you... ⠀ ⠀ ⠀ Jesus?!"
-    }
-
     if (result < 0) {
         message = "Mayhaps you weren't supposed to be alive. Your death day was " + -result + " days ago..."
+    }
+
+    if (bDay+bMonth+bYear === 0) {
+        message = "Are you... ⠀ ⠀ ⠀ Jesus?!"
     }
 
     if (gender === null) {
