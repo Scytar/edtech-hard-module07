@@ -52,6 +52,10 @@ document.querySelector("#deathButton").addEventListener("click", (e) => {
 
     let message = "Enjoy your " + result + " days remaining. Make good use of them!"
 
+    if (result === 0) {
+        message = "Dear friend, I fear your time has come. Embrace yourself... Your deathday is today."
+    }
+
     if (result < 0) {
         message = "Mayhaps you weren't supposed to be alive. Your death day was " + -result + " days ago..."
     }
