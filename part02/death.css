@@ -1,0 +1,93 @@
+body{
+    color: #FFFF;
+    width: 100%;
+    min-height: 100vh;
+    font-family: "Roboto";
+    background-image: url(./assets/imgs/crystalball.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#backgroundFade{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #0006;
+}
+
+h1{
+    font-family: "Cookie";
+    font-weight: 400;
+    font-size: 8rem;
+    text-shadow: 8px 8px 4px #000F;
+}
+
+h2{
+    font-size: 2rem;
+    font-weight: 200;
+}
+
+h3{
+    font-weight: 300;
+    font-style: italic;
+}
+
+.birthlabel{
+    font-size: 1.5rem;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.birthInput{
+    width: 4rem;
+    text-align: center;
+    border: 1px solid #0000;
+    border-radius: 4px;
+}
+
+label{
+    cursor: pointer;
+}
+
+p{
+    color: #000F;
+    font-size: 0.5rem;
+    width: 100%;
+    text-align: center;
+}
+
+button{
+    padding: 1rem 3rem;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #FFFF;
+    background-color: #900F;
+    border: 1px solid #000F;
+    border-radius: 1rem;
+    box-shadow: 4px 4px 2px #000F;
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+button:hover{
+    color: #FFFF;
+    opacity: 0.8;
+}
+
+button:active{
+    color: #000F;
+    opacity: 1;
+}
+
+#result{
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    background-color: #0008;
+    color: #FFFF;
+    border-radius: 1rem;
+    opacity: 0;
+}

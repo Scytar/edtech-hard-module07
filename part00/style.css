@@ -1,0 +1,17 @@
+.sieg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+div {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  -webkit-animation-name: example;
+          animation-name: example;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+}/*# sourceMappingURL=style.css.map */

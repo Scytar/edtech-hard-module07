@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- CSS Link -->
+    <link rel="stylesheet" href="./assets/styles/style-base-classes.css">
+    <link rel="stylesheet" href="./death.css">
+
+        <!-- Google Fonts Link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
+
+
+    <title>Glance your DeathDay</title>
+</head>
+<body class="column justify-center align-center width-100">
+    <div id="backgroundFade" class="column justify-center align-center gap-48">
+        <div class="column justify-center align-center width-100">
+            <h1>Glance the Future</h1>
+            <h2>Check your estimate remaining days*</h2>
+        </div>
+        <div class="column justify-center align-center width-100 gap-24">
+            <h3>Enter your birth date</h3>
+            <div class="row justify-center gap-24">
+                <div class="column justify-center align-center">
+                    <label class="birthLabel" for="birthDay">Day</label>
+                    <input id="birthDay" class="birthInput" type="number">
+                </div>
+                <div class="column justify-center align-center">
+                    <label class="birthLabel" for="birthMonth">Month</label>
+                    <input id="birthMonth" class="birthInput" type="number">
+                </div>
+                <div class="column justify-center align-center">
+                    <label class="birthLabel" for="birthYear">Year</label>
+                    <input id="birthYear" class="birthInput" type="number">
+                </div>
+            </div>
+            <h3>Select your gender</h3>
+            <div class="row justify-center align-center gap-48">
+                <label for="genderFemale">
+                    <input id="genderFemale" type="radio" name="gender" value="female">
+                    Female
+                </label>
+                <label for="genderMale">
+                    <input id="genderMale" type="radio" name="gender" value="male">
+                    Male
+                </label>
+            </div>
+
+            <button id="deathButton">I don't fear Death!</button>
+        </div>
+        <span id="result">DEAD</span>
+        <p>* According to Brazil's average life span</p>
+    </div>
+
+    <script src="./death.js"></script>
+</body>
+</html>
