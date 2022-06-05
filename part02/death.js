@@ -11,25 +11,25 @@ let gender = null;
 // Listen for birthdate
 document.querySelector("#birthYear").addEventListener("change", (e) => {
     bYear = Number(e.target.value);
-    console.log(bYear);
+    // console.log(bYear);
 });
 document.querySelector("#birthMonth").addEventListener("change", (e) => {
     bMonth = Number(e.target.value);
-    console.log(bMonth);
+    // console.log(bMonth);
 });
 document.querySelector("#birthDay").addEventListener("change", (e) => {
     bDay = Number(e.target.value);
-    console.log(bDay);
+    // console.log(bDay);
 });
 
 // Listen for gender
 document.querySelector("#genderFemale").addEventListener("change", (e) => {
     gender = e.target.value;
-    console.log(gender)
+    // console.log(gender)
 });
 document.querySelector("#genderMale").addEventListener("change", (e) => {
     gender = e.target.value;
-    console.log(gender)
+    // console.log(gender)
 });
 
 // Listen for death calc button
@@ -52,9 +52,18 @@ document.querySelector("#deathButton").addEventListener("click", (e) => {
 
     let message = "Enjoy your " + result + " days remaining. Make good use of them!"
 
+    if (bDay+bMonth+bYear === 0) {
+        message = "Are you... ⠀ ⠀ ⠀ Jesus?!"
+    }
+
+    if (result < 0) {
+        message = "Mayhaps you weren't supposed to be alive. Your death day was " + -result + " days ago..."
+    }
+
     if (gender === null) {
         message = "I know your soul is genderless, but you're more than bones at this moment..."
     }
+
 
     document.querySelector("#result").style.opacity = 1;
     document.querySelector("#result").innerHTML = message;
