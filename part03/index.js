@@ -1,10 +1,10 @@
 let numberA = null;
 let numberB = null;
-let inputA = document.querySelector("#inputA");
-let inputB = document.querySelector("#inputB");
-let operator = document.querySelector("#mathOperation");
-let calcButton = document.querySelector("#calcButton");
-let result = document.querySelector("#result");
+const inputA = document.querySelector("#inputA");
+const inputB = document.querySelector("#inputB");
+const operator = document.querySelector("#mathOperation");
+const calcButton = document.querySelector("#calcButton");
+const result = document.querySelector("#result");
 
 inputA.addEventListener("change", (e) => {
     numberA = parseFloat(e.target.value);

@@ -10,7 +10,7 @@ body{
 
 #calculatorCard{
     width: 12rem;
-    height: 16rem;
+    height: 18rem;
     padding: 1rem 0.5rem;
     display: flex;
     flex-direction: column;
@@ -82,4 +82,6 @@ select{
     text-align: start;
     font-size: 1.2rem;
     font-weight: 400;
+    word-break: break-all;
+    overflow: hidden;
 }
