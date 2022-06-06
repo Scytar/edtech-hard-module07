@@ -15,14 +15,18 @@ inputB.addEventListener("change", (e) => {
 })
 
 calcButton.addEventListener("click", () => {
-    result.innerHTML = "= " + (numberA+numberB)
+    result.innerHTML = "= " + (numberA+numberB);
+    console.log("sum = " + numberA+numberB);
     if (operator.value === "subtraction") {
-        result.innerHTML = "= " + (numberA-numberB)
+        result.innerHTML = "= " + (numberA-numberB);
+        console.log(numberA-numberB);
     }
     if (operator.value === "multiplication") {
-        result.innerHTML = "= " + (numberA*numberB)
+        result.innerHTML = "= " + (numberA*numberB);
+        console.log(numberA*numberB);
     }
     if (operator.value === "division") {
-        result.innerHTML = "= " + (numberA/numberB)
+        result.innerHTML = "= " + (numberA/numberB);
+        console.log(numberA/numberB);
     }
 })
