@@ -1,0 +1,71 @@
+body{
+    text-align: center;
+    color: #FFFF;
+    font-family: "Roboto";
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(./assets/imgs/blackboard-math.webp);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#backgroundFade{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #0008;
+}
+
+h1{
+    font-size: 6rem;
+    font-weight: 300;
+}
+
+input{
+    font-size: 1.2rem;
+    text-align: center;
+    width: 8.4rem;
+    padding: 0.2rem 1rem;
+    cursor: pointer;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+label{
+    padding: 1rem 2rem;
+    cursor: pointer;
+}
+
+#generateButton{
+    color: #FFFF;
+    font-size: 2rem;
+    padding: 1rem 2rem;
+    margin: 3rem 0;
+    background-color: darkgreen;
+    cursor: pointer;
+    border: none;
+    border-radius: 5rem;
+    opacity: 0.7;
+}
+
+#generateButton:hover,:focus{
+    opacity: 1;
+}
+
+#generateButton:active{
+    background-color: #FFFF;
+    color: darkgreen;
+}
+
+#result{
+    background-color: #0008;
+    font-size: 4rem;
+    border: none;
+    border-radius: 5rem;
+    padding: 1rem 3rem;
+    opacity: 0;
+}
