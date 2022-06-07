@@ -1,0 +1,63 @@
+body{
+    text-align: center;
+    color: #FFFF;
+    font-family: "Roboto";
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(./assets/imgs/blackboard-math.webp);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#backgroundFade{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #0008;
+}
+
+h1{
+    font-family: "Cookie";
+    font-size: 5rem;
+    font-weight: 200;
+}
+
+input{
+    padding: 0.5rem 1rem;
+    font-size: 2rem;
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+}
+
+#findButton{
+    color: #000F;
+    background-color: #FFFF;
+    font-size: 2rem;
+    font-family: "Roboto";
+    font-weight: 300;
+    padding: 1rem 3rem;
+    margin: 2rem 0;
+    border: none;
+    border-radius: 4rem;
+    cursor: pointer;
+    opacity: 0.7;
+}
+#findButton:hover, #findButton:focus{
+    opacity: 1;
+}
+
+#findButton:active{
+    color: #FFFF;
+    background-color: #000F;
+}
+
+#result{
+    color: #FFFF;
+    background-color: #0008;
+    padding: 1rem 3rem;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 4rem;
+    opacity: 0;
+}
