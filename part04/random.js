@@ -5,8 +5,8 @@ const resultElement = document.querySelector("#result");
 document.querySelector("#generateButton").addEventListener("click", randomRange);
 
 function randomRange() {
-    const minValue = parseFloat(minValueInput.value);
-    const maxValue = parseFloat(maxValueInput.value);
+    const minValue = parseInt(minValueInput.value);
+    const maxValue = parseInt(maxValueInput.value);
     const result = minValue+(Math.floor(Math.random()*(maxValue)));
 
     resultElement.style.opacity = 1;
