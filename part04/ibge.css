@@ -32,6 +32,7 @@ h1{
     border-radius: 10rem;
     opacity: 0.7;
     transition: 100ms;
+    cursor: pointer;
 }
 
 #pickButton:focus, #pickButton:hover{
