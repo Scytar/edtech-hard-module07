@@ -27,6 +27,6 @@ function calcBMI() {
         resultElement.innerHTML = "Digite valores válidos!";
     }
     resultElement.style.opacity = 1;
-    console.log(weight, height, Math.pow((height/100), 2), BMI, rating);
+    // console.log(weight, height, Math.pow((height/100), 2), BMI, rating);
     return null
 }
