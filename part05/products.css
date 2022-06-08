@@ -28,6 +28,8 @@ label{
 #productDisplay{
     width: 400px;
     height: 400px;
+    max-width: 90vmin;
+    max-height: 90vmin;
     border: 2px solid #000F;
     border-radius: 1rem;
     background-position: center;
