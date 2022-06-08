@@ -1,0 +1,37 @@
+body{
+    width: 100%;
+    color: #FFFF;
+    font-family: "Roboto";
+    background-image: url(./assets/imgs/store.png);
+    background-position: center;
+    background-size: cover;
+}
+
+#backgroundFade{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #000A;
+}
+
+label{
+    font-size: 3rem;
+    font-weight: 300;
+}
+
+#productSelect{
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+}
+
+#productDisplay{
+    width: 400px;
+    height: 400px;
+    border: 2px solid #000F;
+    border-radius: 1rem;
+    background-position: center;
+    background-size: cover;
+    background-color: #FFFA;
+    background-repeat: no-repeat;
+}
