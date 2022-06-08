@@ -5,7 +5,7 @@ const resultElement = document.querySelector("#result");
 findButton.addEventListener("click", findIntegers);
 
 function findIntegers() {
-    const userFloat = parseFloat(userInput.value);
+    const userFloat = parseFloat((userInput.value).replace(",", "."));
     const lowerInteger = Math.floor(userFloat);
     const upperInteger = Math.ceil(userFloat);
     let message = `The closest integers are ${lowerInteger} and ${upperInteger}.`;

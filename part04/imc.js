@@ -6,8 +6,8 @@ const resultElement = document.querySelector("#result");
 calcButton.addEventListener("click", calcBMI);
 
 function calcBMI() {
-    const weight = parseFloat(weightInput.value);
-    const height = parseFloat(heightInput.value);
+    const weight = parseFloat((weightInput.value).replace(",", "."));
+    const height = parseFloat((heightInput.value).replace(",", "."));
     const BMI = (Math.floor(10*weight/(Math.pow((height/100), 2))))/10;
     let rating = null;
     if (18.5 > BMI) {
