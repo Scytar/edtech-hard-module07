@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+            <!-- CSS Link -->
+        <link rel="stylesheet" href="./assets/styles/style-base-classes.css">
+        <link rel="stylesheet" href="./switch2.css">
+
+            <!-- Google Fonts Link -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
+        
+        <title>Calendário</title>
+    </head>
+    <body>
+        <div id="backgroundFade" class="column justify-center align-center gap-12">
+            <h1>Calendário</h1>
+            <label for="dateInput">Selecione uma data</label>
+            <input id="dateInput" type="date">
+            <button id="checkButton">Verificar!</button>
+            <p id="resultDay" class="result">Dia</p>
+            <p id="resultMonth" class="result">Mês</p>
+            <p id="resultYear" class="result">Ano</p>
+            <p id="resultWeek" class="result">Dia da Semana</p>
+            <p id="resultMonthString" class="result">Mês</p>
+            <p id="timeStamp" class="result">Time Stamp</p>
+        </div>
+
+        <script src="./switch2.js"></script>
+    </body>
+</html>

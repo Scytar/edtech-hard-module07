@@ -1,0 +1,64 @@
+body{
+    width: 100%;
+    color: #FFFF;
+    font-family: "Roboto";
+    background-image: url(./assets/imgs/calendar.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+#backgroundFade{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #000A;
+}
+
+h1{
+    font-size: 4rem;
+    font-weight: 200;
+}
+
+label{
+    cursor: pointer;
+}
+
+#dateInput{
+    text-align: center;
+    cursor: pointer;
+    font-size: 2rem;
+    padding: 1rem 3rem;
+    border: none;
+    border-radius: 3rem;
+}
+
+#checkButton{
+    background-color: #FFFF;
+    color: #000F;
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 1rem 3rem;
+    border: none;
+    border-radius: 3rem;
+    opacity: 0.7;
+    transition: 100ms;
+}
+
+#checkButton:hover{
+    opacity: 1;
+}
+
+#checkButton:active{
+    background-color: #000F;
+    color: #FFFF;
+}
+
+.result{
+    font-size: 1.2rem;
+    background-color: #000F;
+    color: #FFFF;
+    padding: 0.5rem 2rem;
+    border: none;
+    border-radius: 4rem;
+    opacity: 0;
+    cursor: default;
+}
