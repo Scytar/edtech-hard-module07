@@ -42,6 +42,8 @@ function bombDefuse() {
     h3.innerHTML = "Phew! You did it!";
     bombImg.src = "./assets/imgs/thumb-up.png";
     clearTimeout(bombTimer);
+    bombImg.style.cursor = "default";
+
     audioRelief.volume = 0.3;
     audioRelief.play();
     return null;
