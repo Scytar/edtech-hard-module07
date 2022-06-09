@@ -11,11 +11,11 @@ checkButton.addEventListener("click", printDate);
 
 function printDate() {
     const dateFromInput = new Date(dateInput.value);
-    const dateYear = dateFromInput.getFullYear();
-    const dateMonth = dateFromInput.getMonth();
+    const dateYear = dateFromInput.getUTCFullYear();
+    const dateMonth = dateFromInput.getUTCMonth();
     // Add 1 to day due to UTC-3 diff
-    const dateDay = dateFromInput.getDate()+1;
-    const dateWeek = dateFromInput.getDay();
+    const dateDay = dateFromInput.getUTCDate();
+    const dateWeek = dateFromInput.getUTCDay();
     const dateTimeStamp = Date.parse(dateFromInput);
 
     resultDay.style.opacity = 1;
