@@ -36,7 +36,7 @@ function bombExplode() {
 }
 
 function bombDefuse() {
-    document.title = "SUCESS!";
+    document.title = "SUCCESS!";
     startButton.style.display = "flex";
     startButton.innerHTML = "Retry";
     h3.innerHTML = "Phew! You did it!";
