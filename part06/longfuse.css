@@ -1,0 +1,66 @@
+body{
+    text-align: center;
+    width: 100%;
+    color: #FFFF;
+    font-family: "Roboto";
+    background-image: url(./assets/imgs/office-CIA.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+#backgroundFade{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #000A;
+}
+
+h1{
+    margin-top: 2rem;
+    font-size: 4rem;
+    font-weight: 300;
+}
+
+h2{
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+h3{
+    font-weight: 200;
+}
+
+
+
+#startButton{
+    border: none;
+    border-radius: 3rem;
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    opacity: 0.7;
+    transition: 100ms;
+    cursor: pointer;
+}
+
+#startButton:hover{
+    opacity: 1;
+}
+
+#startButton:active{
+    opacity: 1;
+    background-color: #000F;
+    color: #FFFF;
+}
+
+#challengeDisplay{
+    opacity: 0;
+    cursor: default;
+}
+
+#bombImg{
+    width: 300px;
+}
