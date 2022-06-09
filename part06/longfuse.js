@@ -7,13 +7,13 @@ const audioExplosion = new Audio("./assets/sfx/explosion.mp3");
 const audioRelief = new Audio("./assets/sfx/relief.wav");
 const audioTick = new Audio("./assets/sfx/tick.wav");
 let bombTimer = null;
-let remainingTime = 10;
+let remainingTime = 60;
 
 function bombPlant() {
     document.title = "IT'S GONNA EXPLODE!";
     challengeDisplay.style.opacity = 1;
     startButton.style.display = "none";
-    remainingTime = 10;
+    remainingTime = 60;
     h3.innerHTML = "You have " + Math.ceil(remainingTime) + " seconds!";
     bombImg.style.cursor = "pointer";
     bombImg.src = "./assets/imgs/bomb-active.png";
