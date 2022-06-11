@@ -43,11 +43,12 @@ label{
 }
 
 .carInfo{
+    width: 30vw;
     font-weight: 300;
     font-size: 1.5rem;
     padding: 0.5rem 2rem;
     border-radius: 4rem;
-    background-color: #FFFA;
+    background-color: #FFFD;
     color: #000F;
     opacity: 1;
 }

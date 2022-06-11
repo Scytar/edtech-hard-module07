@@ -1,0 +1,23 @@
+body{
+    width: 100%;
+    color: #FFFF;
+    font-family: "Roboto";
+    background-image: url(./assets/imgs/correios.webp);
+    background-position: 50% 0%;
+    background-size: cover;
+}
+
+#backgroundFade{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #000A;
+}
+
+input{
+    font-size: 3rem;
+    padding: 0.5rem 2rem;
+    border: none;
+    border-radius: 5rem;
+    box-shadow: 12px 12px 12px #000F;
+    text-align: center;
+}
