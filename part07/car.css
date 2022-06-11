@@ -1,0 +1,52 @@
+body{
+    width: 100%;
+    color: #FFFF;
+    font-family: "Roboto";
+    background-image: url(./assets/imgs/racing.jpg);
+    background-position: 50% 0%;
+    background-size: cover;
+}
+
+#backgroundFade{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #000A;
+}
+
+label{
+    text-align: center;
+    word-break: normal;
+    max-width: 90vw;
+    font-size: 3rem;
+    font-weight: 300;
+}
+
+#carSelect{
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+}
+
+#carDisplay{
+    width: 600px;
+    height: 400px;
+    max-width: 60vw;
+    max-height: 40vw;
+    border: 2px solid #000F;
+    border-radius: 1rem;
+    background-position: center;
+    background-size: cover;
+    background-color: #FFFA;
+    background-repeat: no-repeat;
+}
+
+.carInfo{
+    font-weight: 300;
+    font-size: 1.5rem;
+    padding: 0.5rem 2rem;
+    border-radius: 4rem;
+    background-color: #FFFA;
+    color: #000F;
+    opacity: 1;
+}
