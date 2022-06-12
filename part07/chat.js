@@ -40,7 +40,7 @@ function samirResponse() {
 function sendMessage() {
     if (messageInput.value != "") {
         chatDisplay.textContent += "\r\nEu: " + messageInput.value;
-        chatDisplay.scrollTop += 100;
+        chatDisplay.scrollTop += 1000000;
         messageInput.value = "";
         audioPop.play();
         samirResponse();
