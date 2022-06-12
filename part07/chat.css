@@ -36,6 +36,10 @@ img{
     background-color: #4848;
 }
 
+.input::-webkit-scrollbar{
+    width: 0px;
+}
+
 #chatDisplay{
     min-width: 100%;
     border-radius: 1rem;
@@ -77,4 +81,14 @@ img{
 
 #clearButton:active{
     background-color: #FFFF
+}
+
+@media (max-width: 800px) {
+    div{
+        min-width: 90vw;
+    }
+
+    #inputDiv{
+        flex-direction: column;
+    }
 }

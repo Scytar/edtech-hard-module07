@@ -2,31 +2,47 @@ const chatDisplay = document.querySelector("#chatDisplay");
 const messageInput = document.querySelector("#messageInput");
 const sendButton = document.querySelector("#sendButton");
 const clearButton = document.querySelector("#clearButton");
+const audioPop = new Audio("./assets/sfx/message-pop.wav")
+let response = true;
 
-setTimeout(()=>{
-    chatDisplay.textContent += "Samir: Bom dia, aspirante...";
-},1000)
-setTimeout(()=>{
-    chatDisplay.textContent += "\r\nSamir: Atenção!";
-},2300)
-setTimeout(()=>{
-    chatDisplay.textContent += "\r\nSamir: Plantão Alpha EdTech!";
-},4000)
-setTimeout(()=>{
-    chatDisplay.textContent += "\r\nSamir: Você está convidado para o meu churrasco!";
-},6000)
-setTimeout(()=>{
-    chatDisplay.textContent += "\r\nSamir: Partiu?";
-},7100)
-setTimeout(()=>{
-    chatDisplay.textContent += "\r\nSamir: 🍖🍴🍗🍢🔥🥓👩‍🍳";
-},8700)
+function samirResponse() {
+    if (response) {
+        response = false;
+        setTimeout(()=>{
+            chatDisplay.textContent += "\r\nSamir: Bom dia, aspirante...";
+            audioPop.play();
+        },1000)
+        setTimeout(()=>{
+            chatDisplay.textContent += "\r\nSamir: Atenção!";
+            audioPop.play();
+        },2300)
+        setTimeout(()=>{
+            chatDisplay.textContent += "\r\nSamir: Plantão Alpha EdTech!";
+            audioPop.play();
+        },4000)
+        setTimeout(()=>{
+            chatDisplay.textContent += "\r\nSamir: Você está convidado para o meu churrasco!";
+            audioPop.play();
+        },6000)
+        setTimeout(()=>{
+            chatDisplay.textContent += "\r\nSamir: Partiu?";
+            audioPop.play();
+        },7100)
+        setTimeout(()=>{
+            chatDisplay.textContent += "\r\nSamir: 🍖🍴🍗🍢🔥🥓👩‍🍳";
+            audioPop.play();
+        },8700)
+    }
+    return null;
+}
 
 function sendMessage() {
     if (messageInput.value != "") {
         chatDisplay.textContent += "\r\nEu: " + messageInput.value;
         chatDisplay.scrollTop += 100;
         messageInput.value = "";
+        audioPop.play();
+        samirResponse();
     }
     return null;
 }
