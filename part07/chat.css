@@ -45,6 +45,10 @@ img{
     flex-grow: 5;
 }
 
+#messageInput:hover{
+    background-color: #575D;
+}
+
 #sendButton{
     color: #000F;
     font-weight: 400;
@@ -52,9 +56,25 @@ img{
     cursor: pointer;
 }
 
+#sendButton:hover{
+    background-color: #696F
+}
+
+#sendButton:active{
+    background-color: #FFFF
+}
+
 #clearButton{
     color: #000F;
     font-weight: 400;
     background-color: #353F;
     cursor: pointer;
+}
+
+#clearButton:hover{
+    background-color: #696F
+}
+
+#clearButton:active{
+    background-color: #FFFF
 }

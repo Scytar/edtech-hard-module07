@@ -4,17 +4,23 @@ const sendButton = document.querySelector("#sendButton");
 const clearButton = document.querySelector("#clearButton");
 
 setTimeout(()=>{
-    chatDisplay.textContent += "Samir: Bom dia, aspirante!";
+    chatDisplay.textContent += "Samir: Bom dia, aspirante...";
 },1000)
 setTimeout(()=>{
+    chatDisplay.textContent += "\r\nSamir: Atenção!";
+},2300)
+setTimeout(()=>{
+    chatDisplay.textContent += "\r\nSamir: Plantão Alpha EdTech!";
+},4000)
+setTimeout(()=>{
     chatDisplay.textContent += "\r\nSamir: Você está convidado para o meu churrasco!";
-},3000)
+},6000)
 setTimeout(()=>{
     chatDisplay.textContent += "\r\nSamir: Partiu?";
-},4500)
+},7100)
 setTimeout(()=>{
     chatDisplay.textContent += "\r\nSamir: 🍖🍴🍗🍢🔥🥓👩‍🍳";
-},5700)
+},8700)
 
 function sendMessage() {
     if (messageInput.value != "") {
