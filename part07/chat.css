@@ -37,12 +37,27 @@ img{
 }
 
 .input::-webkit-scrollbar{
-    width: 0px;
+    width: 0.5rem;
+    border-radius: 1rem;
+}
+
+.input::-webkit-scrollbar-track{
+    background: #8884;
+    border-radius: 1rem;
+}
+
+.input::-webkit-scrollbar-thumb{
+    background: #484F;
+    border-radius: 1rem;
+}
+
+.input::-webkit-scrollbar-thumb:hover{
+    background: #666F;
 }
 
 #chatDisplay{
     min-width: 100%;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
 }
 
 #messageInput{
