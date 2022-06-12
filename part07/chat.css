@@ -1,0 +1,60 @@
+body{
+    width: 100%;
+    color: #FFFF;
+    font-family: "Roboto";
+    background-image: url(./assets/imgs/bg-wpp.jpg);
+    background-position: 50% 0%;
+    background-size: 100%;
+}
+
+div{
+    min-width: 800px;
+}
+
+#backgroundFade{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #000A;
+    padding-top: 3rem;
+}
+
+img{
+    width: 80px;
+    border-radius: 80px;
+    border: 3px solid #070F;
+    box-shadow: 4px 4px 2px #000F;
+}
+
+.input{
+    color: #FFFF;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 2rem;
+    box-shadow: 4px 4px 4px #000F;
+    resize: none;
+    background-color: #4848;
+}
+
+#chatDisplay{
+    min-width: 100%;
+    border-radius: 1rem;
+}
+
+#messageInput{
+    flex-grow: 5;
+}
+
+#sendButton{
+    color: #000F;
+    font-weight: 400;
+    background-color: #353F;
+    cursor: pointer;
+}
+
+#clearButton{
+    color: #000F;
+    font-weight: 400;
+    background-color: #353F;
+    cursor: pointer;
+}
