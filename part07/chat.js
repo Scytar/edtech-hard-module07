@@ -58,6 +58,7 @@ function clearHistory() {
 clearButton.addEventListener("click", clearHistory);
 sendButton.addEventListener("click", sendMessage);
 messageInput.addEventListener("keydown", (e)=>{
+    //Send message if return key is pressed down
     if (e.keyCode === 0x0D) {
         sendMessage();
     }
