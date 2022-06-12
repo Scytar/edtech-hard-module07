@@ -3,6 +3,7 @@ const messageInput = document.querySelector("#messageInput");
 const sendButton = document.querySelector("#sendButton");
 const clearButton = document.querySelector("#clearButton");
 const audioPop = new Audio("./assets/sfx/message-pop.wav")
+const audioExplode = new Audio("./assets/sfx/explosion.mp3")
 let response = true;
 
 function samirResponse() {
@@ -49,10 +50,12 @@ function sendMessage() {
 
 function clearHistory() {
     chatDisplay.textContent = "";
+    audioExplode.volume = 0.1;
+    audioExplode.play();
     return null;
 }
 
-clearButton.addEventListener("click", clearHistory)
+clearButton.addEventListener("click", clearHistory);
 sendButton.addEventListener("click", sendMessage);
 messageInput.addEventListener("keydown", (e)=>{
     if (e.keyCode === 0x0D) {
