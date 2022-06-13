@@ -1,0 +1,48 @@
+body{
+    width: 100%;
+    min-height: 100vh;
+    color: #FFFF;
+    font-family: "Roboto";
+    background-image: linear-gradient(to bottom right, #47013c, #c40099, #c40099, #7800c9, #7800c9, rgb(79, 1, 116));
+}
+
+#backgroundFade{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #0008;
+}
+
+#profileCard{
+    background-color: #0008;
+    padding: 2rem;
+    border: none;
+    border-radius: 1rem;
+}
+
+h1{
+    font-family: "Cookie";
+    font-weight: 200;
+    font-size: 3rem;
+}
+
+.input{
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    background-color: #FFFD;
+}
+
+.input:hover{
+    background-color: #FFFF;
+}
+
+#saveButton{
+    transition: 100ms;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+#saveButton:active{
+    color: #FFFF;
+    background-color: #000F;
+}

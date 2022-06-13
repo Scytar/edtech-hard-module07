@@ -34,6 +34,8 @@ img{
     box-shadow: 4px 4px 4px #000F;
     resize: none;
     background-color: #4848;
+    overflow-y: scroll;
+    scrollbar-color: #484F #8884;
 }
 
 .input::-webkit-scrollbar{
