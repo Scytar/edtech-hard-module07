@@ -68,7 +68,7 @@ function saveProfile() {
         resultGender.textContent = user.gender;
         resultJSON.textContent = userJSON;
 
-        console.log(fieldIsInvalid,userJSON);
+        console.log(user,userJSON, userJSON.parse());
     }
     
     return null;
