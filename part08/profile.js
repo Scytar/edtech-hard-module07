@@ -47,9 +47,10 @@ function saveProfile() {
     
     try {
         fieldIsInvalid = false;
-        if (nameInput.value.length < 5) throw 'Field "Name" is invalid!';
+        if (nameInput.value.length < 5) throw 'Field "Name" must have at least 5 caracters!';
         if (isNaN(weightInput.value) || weightInput.value === "") throw 'Field "Weight" is invalid!';
         if (isNaN(heightInput.value) || heightInput.value === "") throw 'Field "Height" is invalid!';
+        if (!Number.isInteger(parseFloat(heightInput.value))) throw 'Field "Height" is not integer!';
         if (!checkDate()) throw 'Field "Birth Date" is invalid!';
         if (genderInput.value === "null") throw 'Field "Gender" is invalid!';
     }
