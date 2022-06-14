@@ -69,7 +69,7 @@ function saveProfile() {
         resultGender.textContent = user.gender;
         resultJSON.textContent = userJSON;
 
-        console.log(user,userJSON, userJSON.parse());
+        console.log(user,userJSON, JSON.parse(userJSON));
     }
     
     return null;
