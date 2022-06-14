@@ -29,12 +29,20 @@
                     <input id="birthDateInput" class="input" type="date" required>
                 </div>
                 <select id="genderInput" class="input" required>
-                    <option value=null hidden>Gender</option>
+                    <option value="null" hidden>Gender</option>
                     <option value="female">Female</option>
                     <option value="male">Male</option>
                 </select>
                 <button id="saveButton" class="input" type="button">Save</button>
                 <p id="messageBox"></p>
+                <div id="resultDiv">
+                    <p>Name: <span id="resultName"></span></p>
+                    <p>Weight: <span id="resultWeight"></span> Kg</p>
+                    <p>Height: <span id="resultHeight"></span> cm</p>
+                    <p>Birth Date: <span id="resultBirthDate"></span></p>
+                    <p>Gender: <span id="resultGender"></span></p>
+                    <p>JSON: <span id="resultJSON"></span></p>
+                </div>
             </form>
         </div>
 
