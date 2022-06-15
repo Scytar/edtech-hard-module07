@@ -20,6 +20,7 @@ function sumNumbers(a, b) {
 
 function checkSum(a, b) {
     try {
+        if ((a < 0 ) || (b < 0)) throw `Enter positive values!`
         if (isNaN(a) || isNaN(b)) {
             throw `[sum] Impossible to sum ${a} + ${b}`;
         } else {
@@ -43,6 +44,7 @@ function checkSubtraction(a, b) {
         if (isNaN(a) || isNaN(b)) {
             throw `[subtract] Impossible to subtract ${a} - ${b}`;
         } else {
+            if ((a < 0) || (b < 0)) throw `Enter positive values!`
             if (a < b) throw `${b} is greater than ${a}!`;
             if (a === b) throw messageBox.textContent = 0;
             if (a > b) {
@@ -111,17 +113,13 @@ function checkPower(a, b) {
 // Division Operation
 
 function divideNumbers(a,b) {
-    if (a === 0) {
-        return 0;
+    if (b === 1) {
+        return a;
     } else {
-        if (b === 1) {
-            return a;
-        } else {
-            if (a >= b) {
-                a = subtractNumbers(a,b);
-                quotient = sumNumbers(quotient, 1);
-                divideNumbers(a, b);
-            }
+        if (a >= b) {
+            a = subtractNumbers(a,b);
+            quotient = sumNumbers(quotient, 1);
+            divideNumbers(a, b);
         }
     }
     return quotient;
@@ -132,6 +130,7 @@ function checkDivision(a, b) {
     try {
         if ((a < 0) || (b < 0)) throw `Enter positive values!`
         if (b === 0) throw `Division by zero`
+        if (a === 0) throw 0;
         if (a < b) throw `Divisor is greater than dividend`
         if (isNaN(a) || isNaN(b)) {
             throw `[division] Impossible to divide ${a} by ${b}`;
