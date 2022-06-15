@@ -2,6 +2,11 @@ const jsonInput = document.querySelector("#jsonInput");
 const checkButton = document.querySelector("#checkButton");
 const messageBox = document.querySelector("#messageBox");
 
+    const emptyObject = {};
+    emptyObject["spaced attribute"] = 1;
+    Object.defineProperty(emptyObject, 'another attribute', {value:2})
+    console.log(emptyObject["spaced attribute"], Object.getOwnPropertyDescriptor(emptyObject, 'another attribute'), emptyObject);
+
 function checkJSON() {
     
     try {

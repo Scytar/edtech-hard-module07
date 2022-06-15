@@ -1,0 +1,56 @@
+body{
+    width: 100%;
+    min-height: 100vh;
+    color: #FFFF;
+    font-family: "Roboto";
+    background-image: linear-gradient(to bottom right, #47013c, #c40099, #c40099, #7800c9, #7800c9, rgb(79, 1, 116));
+}
+
+#backgroundFade{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #0008;
+}
+
+#sumCard{
+    background-color: #0004;
+    padding: 2rem;
+    border: none;
+    border-radius: 1rem;
+}
+
+h1{
+    font-family: "Cookie";
+    font-weight: 200;
+    font-size: 3rem;
+}
+
+p{
+    padding: 0.2rem 0;
+}
+
+.input{
+    text-align: center;
+    width: 5rem;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    background-color: #FFFD;
+    resize: none;
+    word-break: break-all;
+}
+
+.input:hover{
+    background-color: #FFFF;
+}
+
+#sumButton{
+    transition: 100ms;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+#sumButton:active{
+    color: #FFFF;
+    background-color: #000F;
+}
