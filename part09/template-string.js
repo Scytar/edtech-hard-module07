@@ -32,12 +32,12 @@ function checkSum(a, b) {
     }
 }
 
+// Subtraction Operation
+
 function subtractNumbers(a, b) {
     if (b === 0) return a;
     return subtractNumbers(a^b, (~a & b) << 1);
 }
-
-// Subtraction Operation
 
 function checkSubtraction(a, b) {
     try {
@@ -147,4 +147,4 @@ sumButton.addEventListener("click", ()=>{checkSum(parseInt(num1.value), parseInt
 subtractButton.addEventListener("click", ()=>{checkSubtraction(parseInt(num1.value), parseInt(num2.value))});
 multiplyButton.addEventListener("click", ()=>{checkMultiplication(parseInt(num1.value), parseInt(num2.value))});
 powerButton.addEventListener("click", ()=>{checkPower(parseInt(num1.value), parseInt(num2.value))});
-divideButton.addEventListener("click", ()=>{checkDivision(parseInt(num1.value), parseInt(num2.value))})
+divideButton.addEventListener("click", ()=>{checkDivision(parseInt(num1.value), parseInt(num2.value))});
