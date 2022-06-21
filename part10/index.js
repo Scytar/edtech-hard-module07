@@ -36,22 +36,7 @@ let nextElementId = 2;
 let myObj = null;
 
 // List array
-let productsList = [
-    {
-        id: 0,
-        name: "Product -2",
-        price: 50,
-        description: "This is product a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long description",
-        creationDate: Date(1655819448879)
-    },
-    {
-        id: 1,
-        name: "Product -1",
-        price: 150,
-        description: "This is product -1",
-        creationDate: Date(1655819648879)
-    }
-];
+let productsList = [];
 
 // Fade out message box
 function fadeMessageBox() {
@@ -70,11 +55,11 @@ function checkInputs() {
     fadeMessageBox();
     try {
         if (productNameInput.value === '' || productPrice.value === '' || productDescriptionInput.value === '') throw `Please fill in all fields`;
-        if (productNameInput.length < 3) throw `Product name must be at least 3 characters long`;
-        if (productNameInput.length > 20) throw `Product name must be less than 20 characters long`;
+        if (productNameInput.value.length < 3) throw `Product name must be at least 3 characters long`;
+        if (productNameInput.value.length > 20) throw `Product name must be less than 20 characters long`;
         if (isNaN(productPrice.value)) throw 'Price is not a number';
         if (parseFloat(productPrice.value) <= 0) throw 'Product price must be greater than 0';
-        if (productDescriptionInput.length < 5) throw `Product description must be at least 5 characters long`;
+        if (productDescriptionInput.value.length < 5) throw `Product description must be at least 5 characters long`;
     } catch (error) {
         messageBox.textContent = error;
         messageBox.style.opacity = 1;
@@ -89,11 +74,11 @@ function checkEditInputs() {
     fadeEditMessageBox();
     try {
         if (editProductName.value === '' || editProductPrice.value === '' || editProductDescription.value === '') throw `Please fill in all fields`;
-        if (editProductName.length < 3) throw `Product name must be at least 3 characters long`;
-        if (editProductName.length > 20) throw `Product name must be less than 20 characters long`;
+        if (editProductName.value.length < 3) throw `Product name must be at least 3 characters long`;
+        if (editProductName.value.length > 20) throw `Product name must be less than 20 characters long`;
         if (isNaN(editProductPrice.value)) throw 'Price is not a number';
         if (parseFloat(editProductPrice.value) <= 0) throw 'Product price must be greater than 0';
-        if (editProductDescription.length < 5) throw `Product description must be at least 5 characters long`;
+        if (editProductDescription.value.length < 5) throw `Product description must be at least 5 characters long`;
     } catch (error) {
         editMessageBox.textContent = error;
         editMessageBox.style.opacity = 1;
