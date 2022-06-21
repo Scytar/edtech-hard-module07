@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+            <!-- CSS Link -->
+        <link rel="stylesheet" href="./assets/styles/style-base-classes.css">
+        <link rel="stylesheet" href="./index.css">
+
+            <!-- Google Fonts Link -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
+        
+            <!-- Material UI Icons -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <title>Products - JS Part 10
+        </title>
+    </head>
+    <body>
+        <div id="backgroundFade" class="column justify-center align-center gap-12">
+            <h1>Products List</h1>
+            <form class="row justify-center gap-12" action="">
+                <div class="column gap-12">
+                    <input id="productName" class="input" type="text" placeholder="Product Name" required tabindex="1">
+                    <input id="productPrice" class="input" type="text" placeholder="Price" required tabindex="2">
+                    <button id="addButton" class="input" type="button" tabindex="4">Add Product</button>
+                </div>
+                <textarea id="productDescription" class="input" cols="45" rows="10" placeholder="Description" required tabindex="3"></textarea>
+            </form>
+            <p id="messageBox"></p>
+            <button id="listButton" class="input"  tabindex="5">List Products</button>
+            <table>
+                <tr>
+                    <td>Product</td>
+                    <td>Price</td>
+                    <td>Edit</td>
+                    <td>Delete</td>
+                </tr>
+            </table>
+            <table id="productsList">
+            </table>
+        </div>
+        <div id="showModal">
+            <div id="showModalContent">
+                <p id="showModalClose" class="material-icons modalInfo">clear</p>
+                <div class="column gap-half-rem">
+                    <div><p class="modalInfo">Id: </p><p id="showModalId"></p></div>
+                    <div><p class="modalInfo">Name: </p><p id="showModalName"></p></div>
+                    <div><p class="modalInfo">Price: </p><p id="showModalPrice"></p></div>
+                    <div><p class="modalInfo">Description: </p><p id="showModalDescription"></p></div>
+                    <div><p class="modalInfo">Creation Date: </p><p id="showModalCreationDate"></p></div>
+                </div>
+            </div>
+        </div>
+        <div id="editModal">
+            <form id="editForm" action="">
+                <p id="editModalClose" class="material-icons modalInfo">clear</p>
+                <div class="column width-100 align-start gap-half-rem">
+                    <h3>Edit Product #<span id="editProductId"></span></h3>
+                    <p id="editCreationDate"></p>
+                </div>
+                <div class="column gap-12">
+                    <input id="editProductName" class="input editInput" type="text" placeholder="Product Name" required">
+                    <input id="editProductPrice" class="input editInput" type="text" placeholder="Price" required">
+                    <textarea id="editProductDescription" class="input editInput" cols="45" rows="10" placeholder="Description" required></textarea>
+                    <button id="editButton" class="input editInput" type="button" tabindex="4">Edit Product</button>
+                    <p id="editMessageBox"></p>
+                </div>
+                
+            </form>
+        </div>
+        <script src="./index.js"></script>
+    </body>
+</html>

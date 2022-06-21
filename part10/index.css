@@ -1,0 +1,184 @@
+body{
+    width: 100%;
+    min-height: 100vh;
+    color: #FFFF;
+    font-family: "Roboto";
+    background-image: linear-gradient(to bottom right, #5b004d, #c40099, #c40099, #7800c9, #7800c9, rgb(79, 1, 116));
+}
+
+#backgroundFade{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #0008;
+    gap: 1rem;
+}
+
+h1{
+    font-family: "Cookie";
+    font-size: 5rem;
+    font-weight: 100;
+}
+
+.input{
+    border: none;
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+    resize: none;
+    opacity: 0.8;
+    background-color: #FFFF;
+    color: #000F;
+}
+
+.input:hover{
+    opacity: 1;
+}
+
+.input:active{
+    background-color: #000F;
+    color: #FFFF;
+}
+
+#addButton{
+    height: 100%;
+    cursor: pointer;
+}
+
+#listButton{
+    width: 400px;
+    cursor: pointer;
+}
+
+.material-icons{
+    cursor: pointer;
+}
+
+table{
+    display: flex;
+    flex-direction: column;
+    max-width: 80vw;
+    width: 600px;
+    align-items: center;
+}
+
+tbody{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+ 
+tr{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+} 
+
+.nameColumn{
+    width: 40%;
+    cursor: pointer;
+}
+ 
+.priceColumn{
+    width: 40%;
+}
+
+.editColumn{
+    width: 5%;
+}
+
+.deteleColumn{
+    width: 5%;
+} 
+
+#messageBox{
+    border: none;
+    border-radius: 1rem;
+    height: 2rem;
+    padding: 0.5rem 1rem;
+    background-color: #000F;
+    color: #FFFF;
+    opacity: 0;
+    transition: 0ms;
+}
+
+#showModal{
+    display: none;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    width: 99vw;
+    height: 99vh;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+#showModalContent{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-end;
+    max-width: 40vw;
+    max-height: 70vh;
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: #FFFF;
+    color: #000F;
+    box-shadow: 4px 4px 8px #0008, -4px -4px 8px #0008, -4px 4px 8px #0008, 4px -4px 8px #0008;
+}
+
+.modalInfo{
+    font-weight: 600;
+}
+
+#showModalClose{
+    width: 0;
+    height: 0;
+    font-size: 2rem;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    top: -1.2rem;
+    right: 0.6rem;
+}
+
+#editModal{
+    display: none;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    width: 99vw;
+    height: 99vh;
+    top: 0;
+    left: 0;
+    z-index: 11;
+}
+
+#editForm{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-end;
+    max-width: 40vw;
+    max-height: 70vh;
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: #FFFF;
+    color: #000F;
+    box-shadow: 4px 4px 8px #0008, -4px -4px 8px #0008, -4px 4px 8px #0008, 4px -4px 8px #0008;
+}
+
+.editInput{
+    background-color: #0002;
+}
+
+#editButton{
+    cursor: pointer;
+}
+
+#editMessageBox{
+    opacity: 0;
+}
