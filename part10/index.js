@@ -6,6 +6,9 @@ const addButton = document.getElementById('addButton');
 const listButton = document.getElementById('listButton');
 const productsTable = document.getElementById('productsList');
 const messageBox = document.getElementById('messageBox');
+const searchInput = document.getElementById('searchInput');
+const nameColumnHeader = document.getElementById('nameColumnHeader');
+const priceColumnHeader = document.getElementById('priceColumnHeader');
 
 // Modals HTML Elements
     //Show Details Modal
@@ -30,13 +33,45 @@ const messageBox = document.getElementById('messageBox');
     const editMessageBox = document.getElementById('editMessageBox');
 
 //Set unique id to each product
-let nextElementId = 2;
+let nextElementId = 4;
 
 //Current product to look
 let myObj = null;
 
 // List array
-let productsList = [];
+let productsList = [
+    {
+        id: 0,
+        name: 'Camera',
+        price: 200,
+        description: '600 Megapixels',
+        creationDate: Date.now()
+    },
+    {
+        id: 1,
+        name: 'Notebook',
+        price: 2000,
+        description: 'Ryzen 7 32GB RAM',
+        creationDate: Date.now()
+    },
+    {
+        id: 2,
+        name: 'Smartphone',
+        price: 1500,
+        description: '128GB ROM 6GB RAM',
+        creationDate: Date.now()
+    },
+    {
+        id: 3,
+        name: 'Smart TV',
+        price: 3000,
+        description: '4k Bluetooth Wi-fi',
+        creationDate: Date.now()
+    }
+];
+
+//List to display
+let productsListToDisplay = productsList;
 
 // Fade out message box
 function fadeMessageBox() {
@@ -102,6 +137,9 @@ function addProduct() {
         //Set next object ID
         nextElementId++;
         productsList.push(product);
+
+        //Updates products list
+        listProducts();
 
         //Reset inputs
         productNameInput.value = '';
@@ -177,8 +215,10 @@ function editProduct(id) {
         messageBox.style.opacity = 1;
         messageBox.textContent = `Product ${productsList[id].name} was edited succesfully!`;
         setTimeout(fadeMessageBox, 3000);
+
         //Close edit modal
         editModal.style.display = 'none';
+
         //Update products list
         listProducts();
     }
@@ -238,8 +278,41 @@ function listProducts() {
     return null;
 }
 
+//Sort Products List by Alphabet
+function sortProductsByAlphabet() {
+    productsList.sort(function (a,b){
+        if (a.name > b.name) return 1;
+        if (a.name < b.name) return -1;
+        return 0;
+    });
+    nameColumnHeader.textContent = `Product ↓`;
+    priceColumnHeader.textContent = `Price`;
+    listProducts();
+    return null;
+}
+
+//Sort Products List by Price
+function sortProductsByPrice() {
+    productsList.sort(function(a,b) {
+        return (a.price - b.price);
+    });
+    nameColumnHeader.textContent = `Product`;
+    priceColumnHeader.textContent = `Price ↓`;
+    listProducts();
+    return null;
+}
+
+//Search Products by name/description string
+function searchProduct() {
+    
+    return null;
+}
+
 addButton.addEventListener('click', addProduct);
 listButton.addEventListener('click', listProducts);
 showModalClose.addEventListener('click', ()=>{showModal.style.display = 'none'});
 editModalClose.addEventListener('click', ()=>{editModal.style.display = 'none'});
 editButton.addEventListener('click', ()=>{editProduct(myObj.id)});
+nameColumnHeader.addEventListener('click', sortProductsByAlphabet);
+priceColumnHeader.addEventListener('click', sortProductsByPrice);
+searchInput.addEventListener('input', searchProduct);
