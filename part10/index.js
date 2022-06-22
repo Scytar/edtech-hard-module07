@@ -39,6 +39,7 @@ let nextElementId = 4;
 let myObj = null;
 
 // List array
+// productsList is not empty for testing convenience
 let productsList = [
     {
         id: 0,
@@ -69,9 +70,6 @@ let productsList = [
         creationDate: Date.now()
     }
 ];
-
-//List to display
-let productsListToDisplay = productsList;
 
 // Fade out message box
 function fadeMessageBox() {
@@ -139,7 +137,7 @@ function addProduct() {
         productsList.push(product);
 
         //Updates products list
-        listProducts();
+        listProducts(productsList);
 
         //Reset inputs
         productNameInput.value = '';
@@ -157,13 +155,11 @@ function addProduct() {
 function showProduct(id) {
     //Get product
     myObj = null;
-    let counter = 0;
-    while (counter < productsList.length) {
-        if (productsList[counter].id === id) {
-            myObj = productsList[counter];
+    for (let i = 0; i < productsList.length; i++) {
+        if (productsList[i].id === id) {
+            myObj = productsList[i];
             break;
         }
-        counter++;
     }
     const date = new Date(myObj.creationDate);
 
@@ -180,13 +176,11 @@ function showProduct(id) {
 function openEditModal(id) {
     // Get product
     myObj = null;
-    let counter = 0;
-    while (counter < productsList.length) {
-        if (productsList[counter].id === id) {
-            myObj = productsList[counter];
+    for (let i = 0; i < productsList.length; i++) {
+        if (productsList[i].id === id) {
+            myObj = productsList[i];
             break;
         }
-        counter++;
     }
     const date = new Date(myObj.creationDate);
 
@@ -220,45 +214,41 @@ function editProduct(id) {
         editModal.style.display = 'none';
 
         //Update products list
-        listProducts();
+        listProducts(productsList);
     }
 }
 
 //Delete product
 function deleteProduct(id) {
     //Create new empty array
-    const newProductList = [];
-    //Iterate through original products array
-    let counter = 0;
-    while (counter < productsList.length) {
-        if (productsList[counter].id != id) {
-            //If the object is not what I want to delete, insert it into the new array
-            newProductList.push(productsList[counter]);
-        };
-        counter++;
+    let newProductList = [];
+    for (let i = 0; i < productsList.length; i++) {
+        if (productsList[i].id === id) {
+            newProductList = productsList.slice(0,i).concat(productsList.slice(i+1, productsList.length))
+        }
     }
     //Swap original produtcs array with the new without the desired obj
     productsList = newProductList;
+
     //Updates the list in display
-    listProducts();
+    listProducts(productsList);
 }
 
 // Update products list
-function listProducts() {
+function listProducts(list) {
     // Clear table
     productsTable.innerHTML = ``;
 
-    let counter = 0;
-    while (counter < productsList.length) {
-        const row = productsTable.insertRow(counter);
+    for (let i = 0; i < list.length; i++) {
+        const row = productsTable.insertRow(i);
 
         const cell1 = row.insertCell(0);
         const cell2 = row.insertCell(1);
         const cell3 = row.insertCell(2);
         const cell4 = row.insertCell(3);
 
-        cell1.innerHTML = `<span>#${productsList[counter].id} ${productsList[counter].name}</span>`;
-        cell2.innerHTML = `R$ ${productsList[counter].price}`;
+        cell1.innerHTML = `<span>#${list[i].id} ${list[i].name}</span>`;
+        cell2.innerHTML = `R$ ${list[i].price}`;
         cell3.innerHTML = `<span class="material-icons")>edit</span>`;
         cell4.innerHTML = `<span class="material-icons">delete</span>`;
 
@@ -268,12 +258,10 @@ function listProducts() {
         cell4.classList.add('deleteColumn');
         
         //Set unique ID to be attached to the eventListener
-        let id = productsList[counter].id;
+        let id = list[i].id;
         cell1.addEventListener('click', ()=>{showProduct(id)});
         cell3.addEventListener('click', ()=>{openEditModal(id)});
         cell4.addEventListener('click', ()=>{deleteProduct(id)});
-
-        counter++;
     }
     return null;
 }
@@ -287,7 +275,7 @@ function sortProductsByAlphabet() {
     });
     nameColumnHeader.textContent = `Product ↓`;
     priceColumnHeader.textContent = `Price`;
-    listProducts();
+    listProducts(productsList);
     return null;
 }
 
@@ -298,21 +286,49 @@ function sortProductsByPrice() {
     });
     nameColumnHeader.textContent = `Product`;
     priceColumnHeader.textContent = `Price ↓`;
-    listProducts();
+    listProducts(productsList);
+    return null;
+}
+
+//Sort Products List by ID
+function sortProductsByID() {
+    productsList.sort(function(a,b) {
+        return (a.id - b.id);
+    });
+    nameColumnHeader.textContent = `Product`;
+    priceColumnHeader.textContent = `Price`;
+    listProducts(productsList);
     return null;
 }
 
 //Search Products by name/description string
 function searchProduct() {
-    
+    fadeMessageBox();
+    if (searchInput.value === '') return sortProductsByID(); else {
+
+        //Set an empty array to display filtered
+        let searchList = [];
+        for (let i = 0; i < productsList.length; i++) {
+            if ((productsList[i].name.toLowerCase()).includes(searchInput.value.toLowerCase) || (productsList[i].description.toLowerCase()).includes(searchInput.value)) {
+                searchList.push(productsList[i]);
+            }
+        }
+        messageBox.style.opacity = 1;
+        messageBox.textContent = `${searchList.length} product(s) found`
+        if (searchList.length === 0) messageBox.textContent = `No products were found using the current search key`;
+        listProducts(searchList);
+    }
     return null;
 }
 
 addButton.addEventListener('click', addProduct);
-listButton.addEventListener('click', listProducts);
+listButton.addEventListener('click', sortProductsByID);
 showModalClose.addEventListener('click', ()=>{showModal.style.display = 'none'});
 editModalClose.addEventListener('click', ()=>{editModal.style.display = 'none'});
 editButton.addEventListener('click', ()=>{editProduct(myObj.id)});
 nameColumnHeader.addEventListener('click', sortProductsByAlphabet);
 priceColumnHeader.addEventListener('click', sortProductsByPrice);
 searchInput.addEventListener('input', searchProduct);
+
+//Convinient for testing
+listProducts(productsList);
