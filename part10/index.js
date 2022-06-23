@@ -247,7 +247,7 @@ function listProducts(list) {
         const cell3 = row.insertCell(2);
         const cell4 = row.insertCell(3);
 
-        cell1.innerHTML = `<span>#${list[i].id} ${list[i].name}</span>`;
+        cell1.innerHTML = `#${list[i].id} ${list[i].name}`;
         cell2.innerHTML = `R$ ${list[i].price}`;
         cell3.innerHTML = `<span class="material-icons")>edit</span>`;
         cell4.innerHTML = `<span class="material-icons">delete</span>`;
