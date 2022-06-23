@@ -91,7 +91,7 @@ function checkInputs() {
         if (productNameInput.value.length < 3) throw `Product name must be at least 3 characters long`;
         if (productNameInput.value.length > 20) throw `Product name must be less than 20 characters long`;
         if (isNaN(productPrice.value)) throw 'Price is not a number';
-        if (parseFloat(productPrice.value) <= 0) throw 'Product price must be greater than 0';
+        if (parseFloat(productPrice.value.replace(',','.')) <= 0) throw 'Product price must be greater than 0';
         if (productDescriptionInput.value.length < 5) throw `Product description must be at least 5 characters long`;
     } catch (error) {
         messageBox.textContent = error;
@@ -110,7 +110,7 @@ function checkEditInputs() {
         if (editProductName.value.length < 3) throw `Product name must be at least 3 characters long`;
         if (editProductName.value.length > 20) throw `Product name must be less than 20 characters long`;
         if (isNaN(editProductPrice.value)) throw 'Price is not a number';
-        if (parseFloat(editProductPrice.value) <= 0) throw 'Product price must be greater than 0';
+        if (parseFloat(editProductPrice.value.replace(',','.')) <= 0) throw 'Product price must be greater than 0';
         if (editProductDescription.value.length < 5) throw `Product description must be at least 5 characters long`;
     } catch (error) {
         editMessageBox.textContent = error;
@@ -128,7 +128,7 @@ function addProduct() {
         const product = {
             id: nextElementId,
             name: productNameInput.value,
-            price: productPrice.value,
+            price: productPrice.value.replace(',','.'),
             description: productDescriptionInput.value,
             creationDate: creationDate
         };
@@ -201,7 +201,7 @@ function editProduct(id) {
     if (checkEditInputs()) {
         //Update product object inside productsList[]
         productsList[id].name = editProductName.value;
-        productsList[id].price = editProductPrice.value;
+        productsList[id].price = editProductPrice.value.replace(',','.');
         productsList[id].description = editProductDescription.value;
         productsList[id].creationDate = Date.now();
 
@@ -303,19 +303,28 @@ function sortProductsByID() {
 
 //Search Products by name/description string
 function searchProduct() {
+
+    //Clear message box
     fadeMessageBox();
+    //Reset list headers
+    nameColumnHeader.textContent = `Product`;
+    priceColumnHeader.textContent = `Price`;
     if (searchInput.value === '') return sortProductsByID(); else {
 
         //Set an empty array to display filtered
         let searchList = [];
+        //Look for matching name/description
         for (let i = 0; i < productsList.length; i++) {
             if ((productsList[i].name.toLowerCase()).includes(searchInput.value.toLowerCase) || (productsList[i].description.toLowerCase()).includes(searchInput.value)) {
                 searchList.push(productsList[i]);
             }
         }
+
+        //Display in message box
         messageBox.style.opacity = 1;
         messageBox.textContent = `${searchList.length} product(s) found`
         if (searchList.length === 0) messageBox.textContent = `No products were found using the current search key`;
+        
         listProducts(searchList);
     }
     return null;

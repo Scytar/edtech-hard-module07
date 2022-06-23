@@ -190,3 +190,7 @@ tr{
 #editMessageBox{
     opacity: 0;
 }
+
+.button{
+    font-weight: 800;
+}
