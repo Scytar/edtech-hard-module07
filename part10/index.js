@@ -315,7 +315,7 @@ function searchProduct() {
         let searchList = [];
         //Look for matching name/description
         for (let i = 0; i < productsList.length; i++) {
-            if ((productsList[i].name.toLowerCase()).includes(searchInput.value.toLowerCase) || (productsList[i].description.toLowerCase()).includes(searchInput.value)) {
+            if ((productsList[i].name.toLowerCase()).includes(searchInput.value.toLowerCase().trim()) || (productsList[i].description.toLowerCase()).includes(searchInput.value.toLowerCase().trim())) {
                 searchList.push(productsList[i]);
             }
         }
