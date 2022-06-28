@@ -6,10 +6,22 @@ const pokerButton = document.getElementById('pokerButton');
 const pokerResult = document.getElementById('pokerResult');
 const pokerTable = document.getElementById('pokerTable');
 
+//Recursive factorial
+// function myFactorial(num) {
+//     num = BigInt(num);
+//     if (num >= 2n) return num *= myFactorial(num-1n);
+//     else return 1n;
+// }
+
+//Iteration factorial
 function myFactorial(num) {
     num = BigInt(num);
-    if (num >= 2n) return num *= myFactorial(num-1n);
-    else return 1n;
+    let factorial = 1n;
+    while (num > 1n) {
+        factorial *= num;
+        num--;
+    }
+    return factorial;
 }
 
 function eulerNum() {
