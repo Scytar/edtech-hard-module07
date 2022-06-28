@@ -19,6 +19,7 @@ const priceColumnHeader = document.getElementById('priceColumnHeader');
     const showModalDescription = document.getElementById('showModalDescription');
     const showModalCreationDate = document.getElementById('showModalCreationDate');
     const showModalClose = document.getElementById('showModalClose');
+    const showModalContent = document.getElementById('showModalContent');
 
     //Edit Modal
     const editModal = document.getElementById('editModal');
@@ -330,10 +331,28 @@ function searchProduct() {
     return null;
 }
 
-addButton.addEventListener('click', addProduct);
-listButton.addEventListener('click', sortProductsByID);
+//Close modal if click away from it
+    // let modalToClose = null;
+    // function modalClose(modalBackground) {
+    //     console.log('going to close!')
+    //     let modalToClose = setTimeout(modalBackground.style.display = 'none', 50);
+    // }
+
+    // function modalCloseCancel() {
+    //     console.log('cancel close!!!!')
+    //     clearTimeout(modalToClose);
+    // }
+
+    // showModal.addEventListener('click', ()=>{modalClose(showModal)});
+    // showModalContent.addEventListener('click', ()=>{modalCloseCancel});
+    // editModal.addEventListener('click', ()=>{modalClose(editModal)});
+    // editForm.addEventListener('click', ()=>{modalCloseCancel});
+
 showModalClose.addEventListener('click', ()=>{showModal.style.display = 'none'});
 editModalClose.addEventListener('click', ()=>{editModal.style.display = 'none'});
+
+addButton.addEventListener('click', addProduct);
+listButton.addEventListener('click', sortProductsByID);
 editButton.addEventListener('click', ()=>{editProduct(myObj.id)});
 nameColumnHeader.addEventListener('click', sortProductsByAlphabet);
 priceColumnHeader.addEventListener('click', sortProductsByPrice);
@@ -341,3 +360,4 @@ searchInput.addEventListener('input', searchProduct);
 
 //Convinient for testing
 listProducts(productsList);
+editModalClose.addEventListener('click', ()=>{showModal.style.display = 'none'});
