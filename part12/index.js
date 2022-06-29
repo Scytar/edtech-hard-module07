@@ -100,8 +100,7 @@ for (let suit = 0; suit < 4; suit++) {
     for (let value = 2; value <= 14; value++) {
         const newCard = {
             suit: suit,
-            value: value,
-            active: true
+            value: value
         };
         cardsArray.push(newCard);
     }
@@ -159,6 +158,9 @@ function checkSequence(array) {
                 array[0].suit === array[4].suit
             )   {
                 pokerResult.textContent = "You've got a Straight Flush!";
+                if (array[0].value === 10) {
+                    pokerResult.textContent = "You've got a Royal Flush!";
+                }
             };
         };
 }
@@ -185,7 +187,17 @@ function pokerPick() {
         // Testing purposes
         // {
         //     suit: 0,
-        //     value: 9,
+        //     value: 10,
+        //     active: true
+        // },
+        // {
+        //     suit: 0,
+        //     value: 10,
+        //     active: true
+        // },
+        // {
+        //     suit: 0,
+        //     value: 10,
         //     active: true
         // },
         // {
@@ -196,16 +208,6 @@ function pokerPick() {
         // {
         //     suit: 0,
         //     value: 11,
-        //     active: true
-        // },
-        // {
-        //     suit: 0,
-        //     value: 12,
-        //     active: true
-        // },
-        // {
-        //     suit: 0,
-        //     value: 13,
         //     active: true
         // }
     ];
