@@ -1,0 +1,59 @@
+body{
+    color: #FFFF;
+    width: 100%;
+    min-height: 100vh;
+    font-family: 'Roboto';
+    font-weight: 300;
+}
+
+h1{
+    font-family: 'Cookie';
+    font-weight: 200;
+    font-size: 5rem;
+}
+
+#backgroundFade{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #000A;
+}
+
+.elementWrapper{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 33% 33% 33%;
+    gap: 0.5rem;
+}
+
+.element{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: #000F;
+    background-color: #FFFA;
+    text-align: center;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 1rem;
+    transition: 100ms;
+}
+
+.element:hover{
+    background-color: #FFFF;
+}
+
+button{
+    color: #000F;
+    background-color: #FFFF;
+    padding: 0.5rem 2rem;
+    border: 2px #000F solid;
+    border-radius: 2rem;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: 100ms;
+}
+
+button:hover{
+    opacity: 1;
+}
