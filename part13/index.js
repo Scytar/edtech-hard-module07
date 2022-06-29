@@ -1,6 +1,7 @@
-let ticTacToe = document.querySelectorAll(".element");
+const ticTacToe = document.querySelectorAll(".element");
 const messageBox = document.getElementById('messageBox');
 const resetButton = document.getElementById('resetButton');
+const clickedCells = [];
 
 let winner = false;
 let currentPlayer = '✗';

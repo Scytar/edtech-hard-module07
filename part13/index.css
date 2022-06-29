@@ -4,6 +4,7 @@ body{
     min-height: 100vh;
     font-family: 'Roboto';
     font-weight: 300;
+    background-image: linear-gradient(to bottom right, #47013c, #c40099, #c40099, #7800c9, #7800c9, rgb(79, 1, 116));
 }
 
 h1{
