@@ -29,7 +29,7 @@ function myFactorial(num) {
 function eulerNum() {
     console.time('euler');
     let sum = 0n;
-    //Opera GX browser triggers infinte loop protection for counter>(2**13)
+    
     for (let i = 0n; i < (10n ** 3n); i++) {
         sum += ((10n ** 100n)/myFactorial(i));
     }
@@ -43,7 +43,7 @@ function primeNumbers(num) {
     // Declare array with the only even prime
     const primesArray = [2];
     
-    //Iterate through odd numbers up to 'num'
+    //Iterate through odd numbers up to 'num'**(1/2)
     let i = 3;
     while (i <= num) {
         let isPrime = true;
@@ -125,20 +125,27 @@ function checkRepeated(array) {
             }
         }
     }
-    return sameCardArray;
+    if (sameCardArray.length === 1) pokerResult.textContent = "You've got a pair!";
+    if (sameCardArray.length === 2) pokerResult.textContent = "You've got two pairs!";
+    if (sameCardArray.length === 3) pokerResult.textContent = "You've got three of a kind!";
+    if (sameCardArray.length === 4) pokerResult.textContent = "You've got a Full House!";
+    if (sameCardArray.length === 6) pokerResult.textContent = "You've got four of a kind!";
+    return null;
 }
 
 function sortCard(array) {
+    // Sort by suit
     array.sort(function (a,b){
         if (a.suit > b.suit) return 1;
         if (a.suit < b.suit) return -1;
         return 0;
-    })
+    });
+    // Sort by value
     array.sort(function (a,b){
         if (a.value > b.value) return 1;
         if (a.value < b.value) return -1;
         return 0;
-    })
+    });
     return null;
 }
 
@@ -149,33 +156,26 @@ function checkSequence(array) {
         array[0].value === array[2].value-2 &&
         array[0].value === array[3].value-3 &&
         array[0].value === array[4].value-4
+    )   {
+        pokerResult.textContent = "You've got a Straight!";
+        if (
+            array[0].suit === array[1].suit &&
+            array[0].suit === array[2].suit &&
+            array[0].suit === array[3].suit &&
+            array[0].suit === array[4].suit
         )   {
-            pokerResult.textContent = "You've got a Straight!";
-            if (
-                array[0].suit === array[1].suit &&
-                array[0].suit === array[2].suit &&
-                array[0].suit === array[3].suit &&
-                array[0].suit === array[4].suit
-            )   {
-                pokerResult.textContent = "You've got a Straight Flush!";
-                if (array[0].value === 10) {
-                    pokerResult.textContent = "You've got a Royal Flush!";
-                }
-            };
+            pokerResult.textContent = "You've got a Straight Flush!";
+            if (array[0].value === 10) {
+                pokerResult.textContent = "You've got a Royal Flush!";
+            }
         };
+    };
 }
 
 function showResults() {
     pokerResult.textContent = 'Nothing! Better luck next time...';
     checkSequence(pickedCards);
-    const repeatedCards = checkRepeated(pickedCards);
-    if (repeatedCards.length > 0) {
-        if (repeatedCards.length === 1) pokerResult.textContent = "You've got a pair!";
-        if (repeatedCards.length === 2) pokerResult.textContent = "You've got two pairs!";
-        if (repeatedCards.length === 3) pokerResult.textContent = "You've got three of a kind!";
-        if (repeatedCards.length === 4) pokerResult.textContent = "You've got a Full House!";
-        if (repeatedCards.length === 6) pokerResult.textContent = "You've got four of a kind!";
-    }
+    checkRepeated(pickedCards);
 }
 
 let pickedCards = [];
