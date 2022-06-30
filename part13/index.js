@@ -1,7 +1,7 @@
 const ticTacToe = document.querySelectorAll(".element");
 const messageBox = document.getElementById('messageBox');
 const resetButton = document.getElementById('resetButton');
-const clickedCells = [];
+const clickedCells = [[],[],[]];
 
 let winner = false;
 let currentPlayer = '✗';
@@ -19,6 +19,10 @@ function setValue(e) {
                 currentPlayer = '✗';
                 break;
         }
+        // Add ij coordinates in clickedCells 2D array
+        clickedCells[e.target.dataset.i].push(e.target.dataset.j);
+        clickedCells[e.target.dataset.i].sort();
+        
         messageBox.textContent = `It's ${currentPlayer} Player's turn!`
     }
     winner = checkWinner(ticTacToe)
@@ -90,8 +94,19 @@ function checkWinner(array) {
     return false;
 }
 
+// Set global coordinates to be set when rendering cells
+let i = 0;
+let j = 0;
+
 ticTacToe.forEach((element)=>{
     element.addEventListener('click', (e)=>{setValue(e)});
     element.dataset.mark = '';
+    element.dataset.i = i;
+    i++;
+    element.dataset.j = j;
+    if (i === 3) {
+        i = 0;
+        j++;
+    }
 })
 resetButton.addEventListener('click', ()=>{location.reload()});
