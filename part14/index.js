@@ -43,6 +43,7 @@ function selectAnchor(id) {
 
 // Load content and page's title
 function loadContent(id) {
+    console.log(id)
     switch (id) {
         case 'homeAnchor':
             renderHome();
@@ -112,8 +113,8 @@ window.addEventListener('popstate', (e)=>{
     // console.log(e)
     //Don't run if state is not a string
     if (typeof(stateId) === 'string') {
-        selectAnchor(stateId);
         loadContent(stateId);
+        selectAnchor(stateId);
     }
 })
 
@@ -125,8 +126,8 @@ window.addEventListener('hashchange', (e)=>{
     // console.log(hash)
     // Don't run if hash is not a string / emptystring
     if (typeof(hash) === 'string' && hash != 'Anchor') {
-        selectAnchor(hash);
         loadContent(hash);
+        selectAnchor(hash);
     }
 })
 
