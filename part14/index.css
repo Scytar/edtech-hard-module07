@@ -1,3 +1,7 @@
+*{
+    transition: 0ms;
+}
+
 body{
     color: #FFFF;
     width: 100%;
