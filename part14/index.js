@@ -130,8 +130,12 @@ window.addEventListener('hashchange', (e)=>{
     }
 })
 
-//Dispatch 'rout' @ end of JS                         UNCOMMENT ME!        UNCOMMENT ME!        UNCOMMENT ME!        UNCOMMENT ME!
-window.dispatchEvent(routHome)
+const firstLoadHash = location.hash;
+location.hash += 'a';
+location.hash = firstLoadHash
+
+//Dispatch 'rout' @ end of JS
+// window.dispatchEvent(routHome)
 
 //Listens for URL change
     // let currentUrl = location.href;
