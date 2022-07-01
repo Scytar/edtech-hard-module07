@@ -1,7 +1,11 @@
 const ticTacToe = document.querySelectorAll(".element");
 const messageBox = document.getElementById('messageBox');
 const resetButton = document.getElementById('resetButton');
-const clickedCells = [[],[],[]];
+const clickedCells = [
+    [],
+    [],
+    []
+];
 
 let winner = false;
 let currentPlayer = '✗';
@@ -100,10 +104,12 @@ let j = 0;
 
 ticTacToe.forEach((element)=>{
     element.addEventListener('click', (e)=>{setValue(e)});
+
     element.dataset.mark = '';
     element.dataset.i = i;
-    i++;
     element.dataset.j = j;
+
+    i++;
     if (i === 3) {
         i = 0;
         j++;
