@@ -86,7 +86,7 @@ function pushModule(event) {
             window.history.pushState(`chocolateAnchor`, '', `/edtech-hard-module07/part14/#chocolate`);
             break;
         case 'cupcakeAnchor':
-            window.history.pushState(`cupcakeAnchor`, '', `/edtech-hard-module07/part14/#cupcakes`);
+            window.history.pushState(`cupcakeAnchor`, '', `/edtech-hard-module07/part14/#cupcake`);
             break;
         case 'candyAnchor':
             window.history.pushState(`candyAnchor`, '', `/edtech-hard-module07/part14/#candy`);
@@ -130,6 +130,7 @@ window.addEventListener('hashchange', (e)=>{
     }
 })
 
+//First load hashupdate to trigger line 123
 const firstLoadHash = location.hash;
 location.hash += 'a';
 location.hash = firstLoadHash
