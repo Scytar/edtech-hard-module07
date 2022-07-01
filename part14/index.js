@@ -80,19 +80,19 @@ function pushModule(event) {
     // Switch for browser's history
     switch (id) {
         case 'homeAnchor':
-            window.history.pushState(`homeAnchor`, '', `/part14/`);
+            window.history.pushState(`homeAnchor`, '', `/edtech-hard-module07/part14/`);
             break;
         case 'chocolateAnchor':
-            window.history.pushState(`chocolateAnchor`, '', `/part14/#chocolate`);
+            window.history.pushState(`chocolateAnchor`, '', `/edtech-hard-module07/part14/#chocolate`);
             break;
         case 'cupcakeAnchor':
-            window.history.pushState(`cupcakeAnchor`, '', `/part14/#cupcakes`);
+            window.history.pushState(`cupcakeAnchor`, '', `/edtech-hard-module07/part14/#cupcakes`);
             break;
         case 'candyAnchor':
-            window.history.pushState(`candyAnchor`, '', `/part14/#candy`);
+            window.history.pushState(`candyAnchor`, '', `/edtech-hard-module07/part14/#candy`);
             break;
         default:
-            window.history.pushState(`${id}`, '', `/part14/#${event.target.textContent}`);
+            window.history.pushState(`${id}`, '', `/edtech-hard-module07/part14/#${event.target.textContent}`);
             break;
     }
     // console.log(window.history)
