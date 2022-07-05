@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+            <!-- CSS Link -->
+        <link rel="stylesheet" href="./assets/styles/style-base-classes.css">
+        <link rel="stylesheet" href="./index.css">
+
+            <!-- Google Fonts Link -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
+        
+            <!-- Material UI Icons -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <title>Currency Exchange - JS Part 15</title>
+    </head>
+    <body class="column align-center justify-center gap-12">
+        <main>
+            <section class="column align-center gap-12">
+                <h1>Check the current BRL exchange</h1>
+                <select name="" id="currencySelect">
+                    <option value="" hidden>Exchange to...</option>
+                    <option value="USD">USD</option>
+                    <option value="CAD">CAD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="BTC">BTC</option>
+                </select>
+                <div class="row align-center gap-12">
+                    <div class="column align-center gap-12">
+                        <label for="startDateInput">Start Date</label>
+                        <input type="date" name="" id="startDateInput">
+                    </div>
+                    <div class="column align-center gap-12">
+                        <label for="endDateInput">End Date</label>
+                        <input type="date" name="" id="endDateInput">
+                    </div>
+                </div>
+                <button id="currencyFetchButton">Check Currency Exchange</button>
+                <p id="messageBox"></p>
+                <table>
+                    <thead>
+                        <th>Today</th>
+                        <th>Time</th>
+                        <th>Min</th>
+                        <th>Max</th>
+                        <th>Date Closed</th>
+                    </thead>
+                    <tbody id="tableBody">
+    
+                    </tbody>
+                </table>
+            </section>
+            <div id="loadingModal">
+                <p>Loading...</p>
+            </div>
+        </main>
+        <script src="./index.js"></script>
+    </body>
+</html>
