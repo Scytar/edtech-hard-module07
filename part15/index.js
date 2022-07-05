@@ -56,7 +56,7 @@ function currencyFetch() {
     const currency = currencySelect.value;
     const startDate = new Date(startDateInput.value);
     const endDate = new Date(endDateInput.value);
-    console.log(currency, startDate, endDate, !startDateInput.value, !endDateInput.value)
+    
     if (currency === '' || !startDateInput.value || !endDateInput.value) messageBox.textContent = 'Please insert valid values'
     else {
         //Reset message box
