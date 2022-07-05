@@ -56,8 +56,8 @@ function currencyFetch() {
     const currency = currencySelect.value;
     const startDate = new Date(startDateInput.value);
     const endDate = new Date(endDateInput.value);
-
-    if (currency === '' || startDate === '' || endDate === '') messageBox.textContent = 'Please insert valid values'
+    console.log(currency, startDate, endDate, !startDateInput.value, !endDateInput.value)
+    if (currency === '' || !startDateInput.value || !endDateInput.value) messageBox.textContent = 'Please insert valid values'
     else {
         //Reset message box
         messageBox.textContent = '';
@@ -74,6 +74,7 @@ function currencyFetch() {
         //Days between start & end dates
         const period = parseInt((Date.parse(endDate) - Date.parse(startDate))/86400000);
 
+        //Build URL
         const url = `https://economia.awesomeapi.com.br/json/daily/${currency}-BRL/?start_date=${startYear}${startMonth}${startDay}&end_date=${endYear}${endMonth}${endDay}`;
 
         //Show loading modal and change cursor to 'wait'
