@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+            <!-- CSS Link -->
+        <link rel="stylesheet" href="./assets/styles/style-base-classes.css">
+        <link rel="stylesheet" href="./index.css">
+
+            <!-- Google Fonts Link -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
+        
+            <!-- Material UI Icons -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <title>Consulta CEP - JS Part 16</title>
+    </head>
+    <body>
+        <main id="backgroundFade" class="column align-center gap-24" >
+            <h1>Consulta CEP</h1>
+            
+            <!-- Postal Code Fetch Form -->
+            <form class="row gap-1rem justify-center" action="none" method="none">
+                <input id="cepInput" class="input" type="text" name="" placeholder="Digite o CEP" autofocus tabindex="1">
+                <button id="fetchCEPButton" class="input" disabled tabindex="2">OK</button>
+            </form>
+
+            <!-- Message Box -->
+            <p id="messageBox"></p>
+
+            <!-- Show Map Button -->
+            <button id="showMapButton" class="input" type="button" tabindex="3">Exibir mapa</button>
+                
+            <!-- Google Maps iFrame -->
+            <iframe id="iframe" src="">
+    
+            </iframe>
+        </main>
+        
+        <!-- Loading Modal -->
+        <div id="loadingModal">
+            <p>☕ Buscando um cafezinho... </p>
+        </div>
+
+        <script src="./index.js"></script>
+    </body>
+</html>

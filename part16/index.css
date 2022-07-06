@@ -1,0 +1,81 @@
+body{
+    width: 100%;
+    color: #FFFF;
+    font-family: "Roboto";
+    text-align: center;
+    background-image: url(./assets/imgs/correios.webp);
+    background-position: 50% 0%;
+    background-size: cover;
+}
+
+#backgroundFade{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #000A;
+    padding: 1rem 5vw;
+}
+
+h1{
+    font-weight: 200;
+    font-size: 5rem;
+    text-shadow: 4px 4px 4px #000F;
+}
+
+.input{
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5rem;
+    box-shadow: 12px 12px 12px #000F;
+    text-align: center;
+}
+
+button{
+    cursor: pointer;
+}
+
+button:disabled{
+    cursor: not-allowed;
+}
+
+#messageBox{
+    width: 80vw;
+    min-height: 4rem;
+    border: none;
+    border-radius: 1rem;
+    background-color: #0008;
+    display: flex;
+    padding: 0.5rem 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+#showMapButton{
+    display: none;
+}
+
+#loadingModal{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+    background-color: #0008;
+    font-weight: 600;
+    font-size: 2rem;
+    text-shadow: 4px 4px #000F;
+    transition: 0ms;
+    cursor: wait;
+}
+
+#iframe{
+    display: none;
+    width: 80vw;
+    height: 55vh;
+    border: none;
+    box-shadow: 8px 8px 8px #000F;
+}
