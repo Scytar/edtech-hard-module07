@@ -77,5 +77,6 @@ button:disabled{
     width: 80vw;
     height: 55vh;
     border: none;
+    border-radius: 0.5rem;
     box-shadow: 8px 8px 8px #000F;
 }
