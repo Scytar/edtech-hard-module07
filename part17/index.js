@@ -91,18 +91,18 @@ function weatherFetch(id) {
                         date: day1DMY
                     },
                     {//Afternoon
-                        weekday: data[id][day1DMY]['manha']['dia_semana'],
-                        icon: data[id][day1DMY]['manha']['icone'],
-                        summary: data[id][day1DMY]['manha']['resumo'],
-                        tMax: data[id][day1DMY]['manha']['temp_max'],
-                        tMin: data[id][day1DMY]['manha']['temp_min']
+                        weekday: data[id][day1DMY]['tarde']['dia_semana'],
+                        icon: data[id][day1DMY]['tarde']['icone'],
+                        summary: data[id][day1DMY]['tarde']['resumo'],
+                        tMax: data[id][day1DMY]['tarde']['temp_max'],
+                        tMin: data[id][day1DMY]['tarde']['temp_min']
                     },
                     {//Night
-                        weekday: data[id][day1DMY]['manha']['dia_semana'],
-                        icon: data[id][day1DMY]['manha']['icone'],
-                        summary: data[id][day1DMY]['manha']['resumo'],
-                        tMax: data[id][day1DMY]['manha']['temp_max'],
-                        tMin: data[id][day1DMY]['manha']['temp_min']
+                        weekday: data[id][day1DMY]['noite']['dia_semana'],
+                        icon: data[id][day1DMY]['noite']['icone'],
+                        summary: data[id][day1DMY]['noite']['resumo'],
+                        tMax: data[id][day1DMY]['noite']['temp_max'],
+                        tMin: data[id][day1DMY]['noite']['temp_min']
                     }
                 ],
                 [//Second day
@@ -115,18 +115,18 @@ function weatherFetch(id) {
                         date: day2DMY
                     },
                     {//Afternoon
-                        weekday: data[id][day2DMY]['manha']['dia_semana'],
-                        icon: data[id][day2DMY]['manha']['icone'],
-                        summary: data[id][day2DMY]['manha']['resumo'],
-                        tMax: data[id][day2DMY]['manha']['temp_max'],
-                        tMin: data[id][day2DMY]['manha']['temp_min']
+                        weekday: data[id][day2DMY]['tarde']['dia_semana'],
+                        icon: data[id][day2DMY]['tarde']['icone'],
+                        summary: data[id][day2DMY]['tarde']['resumo'],
+                        tMax: data[id][day2DMY]['tarde']['temp_max'],
+                        tMin: data[id][day2DMY]['tarde']['temp_min']
                     },
                     {//Night
-                        weekday: data[id][day2DMY]['manha']['dia_semana'],
-                        icon: data[id][day2DMY]['manha']['icone'],
-                        summary: data[id][day2DMY]['manha']['resumo'],
-                        tMax: data[id][day2DMY]['manha']['temp_max'],
-                        tMin: data[id][day2DMY]['manha']['temp_min']
+                        weekday: data[id][day2DMY]['noite']['dia_semana'],
+                        icon: data[id][day2DMY]['noite']['icone'],
+                        summary: data[id][day2DMY]['noite']['resumo'],
+                        tMax: data[id][day2DMY]['noite']['temp_max'],
+                        tMin: data[id][day2DMY]['noite']['temp_min']
                     }
                 ],
                 {//Third day
@@ -146,6 +146,7 @@ function weatherFetch(id) {
                     date: day4DMY
                 }
             ]
+            console.log(newData)
             resolve((newData))
         })
         .catch(error => {reject(error)})
