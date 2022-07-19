@@ -49,6 +49,8 @@ function locationFetch(UF) {
 
 function weatherFetch(id) {
 
+    result.innerHTML = '<h1 style="width: 100%">Carregando...</h1>'
+
     //Create Custom Promise
     return new Promise((resolve, reject) => {
 
@@ -144,14 +146,15 @@ function weatherFetch(id) {
                     date: day4DMY
                 }
             ]
-            resolve(renderPrediction(newData))
+            resolve((newData))
         })
         .catch(error => {reject(error)})
     })
 }
 
-function renderPrediction(data) {
+async function renderPrediction(id) {
 
+    data = await weatherFetch(id)
     //Reset result display and render
     result.innerHTML = `
         <div class="dataWrapper">
@@ -227,6 +230,6 @@ function renderPrediction(data) {
 }
 
 selectUF.addEventListener('change', (e) => {locationFetch(e.target.value)});
-selectCity.addEventListener('change', (e) => {weatherFetch(e.target.value)});
+selectCity.addEventListener('change', (e) => {renderPrediction(e.target.value)});
 
 districtsFetch()
