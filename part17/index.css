@@ -19,12 +19,15 @@ body{
 }
 
 h1{
+    text-align: center;
+    max-width: 95vw;
     font-weight: 300;
     font-size: 3rem;
 }
 
 select{
     min-width: 8rem;
+    max-width: 95vw;
     font-size: 1.5rem;
 }
 
@@ -44,6 +47,7 @@ select:disabled{
 }
 
 .dataWrapper{
+    max-width: 90vw;
     width: fit-content;
     display: flex;
     gap: 2rem;
@@ -51,6 +55,7 @@ select:disabled{
     padding: 0 2rem;
     border-radius: 1rem;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .showData{
@@ -65,9 +70,14 @@ select:disabled{
 }
 
 .dateLabel{
+    padding: 1rem;
     font-weight: 600;
     font-size: 1.2rem;
     word-break: keep-all;
     text-align: left;
     flex-shrink: 0;
+}
+
+@media (max-width: 400px) {
+    
 }
