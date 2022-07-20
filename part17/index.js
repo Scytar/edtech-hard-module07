@@ -146,7 +146,6 @@ function weatherFetch(id) {
                     date: day4DMY
                 }
             ]
-            console.log(newData)
             resolve((newData))
         })
         .catch(error => {reject(error)})
@@ -155,7 +154,7 @@ function weatherFetch(id) {
 
 async function renderPrediction(id) {
 
-    data = await weatherFetch(id)
+    const data = await weatherFetch(id)
     //Reset result display and render
     result.innerHTML = `
         <div class="dataWrapper">
