@@ -56,17 +56,16 @@ function cardPick() {
     }
 }
 
-async function renderCards() {
-    const render = await deckShuffle();
-
-    if (render) {
+function renderCards() {
+    Promise.all([deckShuffle()])
+    .then(res => {
         result.innerHTML = ``
         for (let i = 0; i < cards.length; i++) {
             result.innerHTML += `
                 <img src=${cards[i]['image']}>
             `
         }
-    }
+    })
 }
 
 renderCards();
