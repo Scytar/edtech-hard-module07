@@ -124,7 +124,7 @@ function checkNum(element) {
 
         //Display win message
         if (_card.verifyBingo()) {
-            result.innerHTML = `Bingo do Cartão ${(element.id).substring(4,5)}!`;
+            result.innerHTML = `O Cartão ${(element.id).substring(4,5)} ganhou!`;
             stopInterval();
         };
     }
