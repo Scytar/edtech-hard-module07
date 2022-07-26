@@ -8,17 +8,15 @@ const card3Div = document.querySelector('#card3');
 function createCard() {
     const card = []
 
-    //Must fix for duplicated numbers            //Must fix for duplicated numbers            //Must fix for duplicated numbers            
+    //Fill card with numbers
     while (card.length < 10) {
         const newItem = {
             value: (1+(Math.floor(Math.random()*75))),
             checked: false
         }
 
-        //Check duplicated values
-        const checkDuplicate = card.filter((e)=>{return (e.value === newItem.value)})
-        
-        if (checkDuplicate.length < 1){
+        //Check duplicated values        
+        if (!card.some((e)=>{return (e.value === newItem.value)})){
             card.push(newItem)
         }        
     }
@@ -28,7 +26,7 @@ function createCard() {
     })
 
     //Lists card info
-    function list() {
+    function getList() {
          return card
     }
 
@@ -48,7 +46,7 @@ function createCard() {
         return (bingo.length >= 10) ? true : false;
     }
 
-    return {list, checkNum, verifyBingo}
+    return {getList, checkNum, verifyBingo}
 }
 
 //Instanciates a Bingo Raffler
@@ -63,7 +61,7 @@ function raffler(min, max) {
     }
 
     //List all numbers
-    function list() {
+    function getList() {
         return numbers
     }
 
@@ -85,7 +83,7 @@ function raffler(min, max) {
         if (drawnNumbers.length === (max-min+1)) return true; else return false
     }
 
-    return {list, drawNumber, checkDrawn}
+    return {getList, drawNumber, checkDrawn}
 }
 
 //Render card
@@ -100,7 +98,7 @@ function renderCard(array, div) {
 }
 
 function checkNum(element) {
-    const wasDrawn = (raffle.list()).filter((e)=>{return e.value == parseInt(element.textContent)}).filter((e)=>{return e.drawn})
+    const wasDrawn = (raffle.getList()).filter((e)=>{return e.value == parseInt(element.textContent)}).filter((e)=>{return e.drawn})
 
     if (wasDrawn.length > 0) {
         element.classList.add('checked');
@@ -134,16 +132,16 @@ function stopInterval(){
     clearInterval(raffleTimer);
 }
 
-const card1 = createCard();
-const card2 = createCard();
-const card3 = createCard();
-const raffle = raffler(1,75);
+const card1 = new createCard();
+const card2 = new createCard();
+const card3 = new createCard();
+const raffle = new raffler(1,75);
 
 let raffleTimer = null;
 
-renderCard(card1.list(), card1Div);
-renderCard(card2.list(), card2Div);
-renderCard(card3.list(), card3Div);
+renderCard(card1.getList(), card1Div);
+renderCard(card2.getList(), card2Div);
+renderCard(card3.getList(), card3Div);
 
 startButton.addEventListener('click', (e)=>{
     if (raffleTimer === null) {
