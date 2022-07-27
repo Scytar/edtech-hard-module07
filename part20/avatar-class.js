@@ -2,7 +2,7 @@ export default class Avatar {
     #x
     #y
     #coins
-    #hp = 10
+    #hp = 10;
     #dmg = 1;
     constructor(_x,_y,_coins) {
         this.#x = _x,
