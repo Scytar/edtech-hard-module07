@@ -1,104 +1,57 @@
-class Avatar {
-    constructor(x,y,coins) {
-        this.x = x;
-        this.y = y;
-        this.coins = coins;
-    }
-
-    get getX() {
-        return this.x;
-    }
-
-    get getY() {
-        return this.y;
-    }
-
-    get getCoins() {
-        return this.coins;
-    }
-
-    setX(value) {
-        if ((this.x+value) >= 0) {return this.x+=value}
-        return `Can't move to negative values!`;
-    }
-
-    setY(value) {
-        if ((this.y+value) >= 0) {return this.y+=value}
-        return `Can't move to negative values!`;
-    }
-
-    setCoins(value) {
-        if ((coins+value) >= 0) {return coins+=value}
-        return `You can't afford that!`;
-    }
-
-    moveFoward() {
-        return this.setY(1);
-    }
-
-    moveBackward() {
-        return this.setY(-1);
-    }
-
-    moveRight() {
-        return this.setX(1);
-    }
-
-    moveLeft() {
-        return this.setX(-1);
-    }
-}
-
-function createAvatar(_x,_y,_coins) {
-    let x = _x;
-    let y = _y;
-    let coins = _coins;
-
-    function getX() {
-        return x;
-    }
-
-    function getY() {
-        return y;
-    }
-
-    function getCoins() {
-        return coins;
-    }
-
-    function setX(value) {
-        if ((x+value) >= 0) {return x+=value}
-        return `Can't move to negative values!`;
-    }
-
-    function setY(value) {
-        if ((y+value) >= 0) {return y+=value}
-        return `Can't move to negative values!`;
-    }
-
-    function setCoins(value) {
-        if ((coins+value) >= 0) {return coins+=value}
-        return `You can't afford that!`;
-    }
-
-    function moveFoward() {
-        return setY(1);
-    }
-
-    function moveBackward() {
-        return setY(-1);
-    }
-
-    function moveRight() {
-        return setX(1);
-    }
-
-    function moveLeft() {
-        return setX(-1);
-    }
-
-    return { getX , getY , getCoins , setCoins , moveFoward , moveBackward , moveRight , moveLeft }
-}
+import Avatar from './avatar-class.js'
+import createAvatar from './avatar-closure.js'
 
 const avatar1 = createAvatar(3,3,0);
-const avatar2 = new Avatar(5,5,1)
+const avatar2 = new Avatar(5,5,1);
+
+//Listens for avatar1 movement
+window.addEventListener('keydown', (e)=>{
+    switch (e.keyCode) {
+        case 65:
+            avatar1.moveLeft();
+            console.log('avatar1' , avatar1.getInfo());
+            break;
+        case 87:
+            avatar1.moveForward();
+            console.log('avatar1' , avatar1.getInfo());
+            break;
+        case 68:
+            avatar1.moveRight();
+            console.log('avatar1' , avatar1.getInfo());
+            break;
+        case 83:
+            avatar1.moveBackward();
+            console.log('avatar1' , avatar1.getInfo());
+            break;
+    }
+})
+
+//Listens for avatar2 movement
+window.addEventListener('keydown', (e)=>{
+    switch (e.keyCode) {
+        case 37:
+            avatar2.moveLeft();
+            console.log('avatar2', avatar2.info);
+            break;
+        case 38:
+            avatar2.moveForward();
+            console.log('avatar2', avatar2.info);
+            break;
+        case 39:
+            avatar2.moveRight();
+            console.log('avatar2', avatar2.info);
+            break;
+        case 40:
+            avatar2.moveBackward();
+            console.log('avatar2', avatar2.info);
+            break;
+        case 96:
+            avatar2.hurt(9);
+            console.log('avatar2', avatar2.info);
+            break;
+    }
+})
+
+console.log('avatar2 attacked avatar1',avatar1.getInfo(), 'avatar1 HP: '+avatar1.hurt(avatar2.dmg), avatar1.getInfo());
+
+console.log('avatar1 attacked avatar2',avatar2.info, 'avatar2 HP: '+avatar2.hurt(avatar1.getDMG()), avatar2.info);

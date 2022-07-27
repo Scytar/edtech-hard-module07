@@ -331,22 +331,15 @@ function searchProduct() {
     return null;
 }
 
-//Close modal if click away from it
-    // let modalToClose = null;
-    // function modalClose(modalBackground) {
-    //     console.log('going to close!')
-    //     let modalToClose = setTimeout(modalBackground.style.display = 'none', 50);
-    // }
+// Close modal if click away from it
+    function modalClose(modalBackground) {
+        modalBackground.style.display = 'none';
+    }
 
-    // function modalCloseCancel() {
-    //     console.log('cancel close!!!!')
-    //     clearTimeout(modalToClose);
-    // }
-
-    // showModal.addEventListener('click', ()=>{modalClose(showModal)});
-    // showModalContent.addEventListener('click', ()=>{modalCloseCancel});
-    // editModal.addEventListener('click', ()=>{modalClose(editModal)});
-    // editForm.addEventListener('click', ()=>{modalCloseCancel});
+    showModal.addEventListener('click', ()=>{modalClose(showModal)});
+    showModalContent.addEventListener('click', (e)=>{e.stopPropagation()});
+    editModal.addEventListener('click', ()=>{modalClose(editModal)});
+    editForm.addEventListener('click', (e)=>{e.stopPropagation()});
 
 showModalClose.addEventListener('click', ()=>{showModal.style.display = 'none'});
 editModalClose.addEventListener('click', ()=>{editModal.style.display = 'none'});
